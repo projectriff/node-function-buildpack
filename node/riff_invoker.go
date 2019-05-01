@@ -116,10 +116,10 @@ func (r RiffNodeInvoker) Contribute() error {
 
 	command := fmt.Sprintf(`node %s/server.js`, r.invokerLayer.Root)
 
-	return r.layers.WriteMetadata(layers.Metadata{
+	return r.layers.WriteApplicationMetadata(layers.Metadata{
 		Processes: layers.Processes{
-			layers.Process{Type: "web", Command: command},
 			layers.Process{Type: "function", Command: command},
+			layers.Process{Type: "web", Command: command},
 		},
 	})
 }
