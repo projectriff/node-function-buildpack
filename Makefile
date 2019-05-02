@@ -1,12 +1,17 @@
-.PHONY: clean build test all
+.PHONY: clean build test acceptance all
 GO_SOURCES = $(shell find . -type f -name '*.go')
 
-all: test build
+all: test build acceptance
 
 build: artifactory/io/projectriff/node/io.projectriff.node
 
 test:
 	go test -v ./...
+
+acceptance:
+	pack create-builder -b acceptance/testdata/builder.toml projectriff/builder
+	docker pull packs/run:0.1.0
+	GO111MODULE=on go test -v -tags=acceptance ./acceptance
 
 artifactory/io/projectriff/node/io.projectriff.node: buildpack.toml $(GO_SOURCES)
 	rm -fR $@ 							&& \

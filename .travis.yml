@@ -4,8 +4,8 @@ go:
 cache:
   directories:
   - $GOPATH/pkg/mod
-install: true
-script: GO111MODULE=on make test build
+install: .travis/install-pack.sh
+script: GO111MODULE=on make test build acceptance
 deploy:
   skip_cleanup: true
   provider: script

@@ -1,0 +1,18 @@
+buildpacks = [
+  { id = "io.projectriff.node",                latest = true, uri = "../../artifactory/io/projectriff/node/io.projectriff.node/latest" },
+  { id = "org.cloudfoundry.buildpacks.nodejs", latest = true, uri = "https://github.com/cloudfoundry/nodejs-cnb/releases/download/v0.0.8/nodejs-cnb-0.0.8.tgz" },
+  { id = "org.cloudfoundry.buildpacks.npm",    latest = true, uri = "https://github.com/cloudfoundry/npm-cnb/releases/download/v0.0.7/npm-cnb-0.0.7.tgz" },
+]
+
+[[groups]]
+  # node functions
+  buildpacks = [
+    { id = "org.cloudfoundry.buildpacks.nodejs", optional = true },
+    { id = "org.cloudfoundry.buildpacks.npm",    optional = true },
+    { id = "io.projectriff.node" },
+  ]
+
+[stack]
+  id = "io.buildpacks.stacks.bionic"
+  build-image = "packs/build:0.1.0"
+  run-image = "packs/run:0.1.0"

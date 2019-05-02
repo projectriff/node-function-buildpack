@@ -95,8 +95,8 @@ github.com/opencontainers/image-spec v1.0.1/go.mod h1:BtxoFyWECRxE4U/7sNtV5W15zM
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/projectriff/libfnbuildpack v0.2.1-0.20190501213702-ce33feeb5b23 h1:N3xYOaowGPgZQHTdR5/ZIX7m66XGOfknqWxeAq3FfTI=
-github.com/projectriff/libfnbuildpack v0.2.1-0.20190501213702-ce33feeb5b23/go.mod h1:3t+ZSFbdJRHO574/n86R/GnwePu4FQiPyRr0u5Yis2Q=
+github.com/projectriff/libfnbuildpack v0.2.1-0.20190502033053-c390bd65d0f5 h1:itlgvKgsM2hrcgu3gzHVMALfcYiYCf+8ySuhI2hQQ4s=
+github.com/projectriff/libfnbuildpack v0.2.1-0.20190502033053-c390bd65d0f5/go.mod h1:3t+ZSFbdJRHO574/n86R/GnwePu4FQiPyRr0u5Yis2Q=
 github.com/sclevine/spec v1.0.0/go.mod h1:W4J29eT/Kzv7/b9IWLB055Z+qvVC9vt0Arko24q7p+U=
 github.com/sclevine/spec v1.2.0 h1:1Jwdf9jSfDl9NVmt8ndHqbTZ7XCCPbh1jI3hkDBHVYA=
 github.com/sclevine/spec v1.2.0/go.mod h1:W4J29eT/Kzv7/b9IWLB055Z+qvVC9vt0Arko24q7p+U=
