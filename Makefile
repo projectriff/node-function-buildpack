@@ -10,7 +10,8 @@ test:
 
 acceptance:
 	pack create-builder -b acceptance/testdata/builder.toml projectriff/builder
-	docker pull packs/run:0.1.0
+	docker pull cnbs/build
+	docker pull cnbs/run
 	GO111MODULE=on go test -v -tags=acceptance ./acceptance
 
 artifactory/io/projectriff/node/io.projectriff.node: buildpack.toml $(GO_SOURCES)
@@ -18,7 +19,6 @@ artifactory/io/projectriff/node/io.projectriff.node: buildpack.toml $(GO_SOURCES
 	./ci/package.sh						&& \
 	mkdir $@/latest 					&& \
 	tar -C $@/latest -xzf $@/*/*.tgz
-
 
 clean:
 	rm -fR artifactory/
