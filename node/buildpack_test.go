@@ -22,7 +22,7 @@ import (
 
 	"github.com/buildpack/libbuildpack/buildplan"
 	"github.com/cloudfoundry/libcfbuildpack/test"
-	nodeCNB "github.com/cloudfoundry/nodejs-cnb/node"
+	nodeCNB "github.com/cloudfoundry/node-engine-cnb/node"
 	"github.com/cloudfoundry/npm-cnb/modules"
 	. "github.com/onsi/gomega"
 	"github.com/projectriff/libfnbuildpack/function"

@@ -29,7 +29,7 @@ import (
 	"github.com/cloudfoundry/libcfbuildpack/detect"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
 	"github.com/cloudfoundry/libcfbuildpack/layers"
-	"github.com/cloudfoundry/nodejs-cnb/node"
+	"github.com/cloudfoundry/node-engine-cnb/node"
 	"github.com/projectriff/libfnbuildpack/function"
 )
 
