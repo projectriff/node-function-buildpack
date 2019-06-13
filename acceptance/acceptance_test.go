@@ -28,7 +28,7 @@ func TestBuilder(t *testing.T) {
 	tcs := &fntesting.Testcases{
 		Common: fntesting.Testcase{
 			Repo:        "https://github.com/projectriff/fats",
-			Refspec:     "c346e1687dc635602552dd864e133feb1dea547f",
+			Refspec:     "a875da0492680d255d8f7a10502550129b5c13f3",
 			Input:       "builder",
 			ContentType: "text/plain",
 			Output:      "BUILDER",
