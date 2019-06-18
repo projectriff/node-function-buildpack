@@ -1,7 +1,7 @@
 buildpacks = [
   { id = "io.projectriff.node",          latest = true, uri = "../../artifactory/io/projectriff/node/io.projectriff.node/latest" },
-  { id = "org.cloudfoundry.node-engine", latest = true, uri = "https://github.com/cloudfoundry/node-engine-cnb/releases/download/v0.0.11/node-engine-cnb-0.0.11.tgz" },
-  { id = "org.cloudfoundry.npm",         latest = true, uri = "https://github.com/cloudfoundry/npm-cnb/releases/download/v0.0.8/npm-cnb-0.0.8.tgz" },
+  { id = "org.cloudfoundry.node-engine", latest = true, uri = "https://github.com/cloudfoundry/node-engine-cnb/releases/download/v0.0.12/node-engine-cnb-0.0.12.tgz" },
+  { id = "org.cloudfoundry.npm",         latest = true, uri = "https://github.com/cloudfoundry/npm-cnb/releases/download/v0.0.9/npm-cnb-0.0.9.tgz" },
 ]
 
 [[groups]]
