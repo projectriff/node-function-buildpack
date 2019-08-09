@@ -15,7 +15,7 @@
 [buildpack]
 id = "io.projectriff.node"
 name = "Node Function Buildpack"
-version = "0.1.2-BUILD-SNAPSHOT"
+version = "0.2.0-BUILD-SNAPSHOT"
 
 [[stacks]]
 id = "io.buildpacks.stacks.bionic"
@@ -26,9 +26,9 @@ id = "org.cloudfoundry.stacks.cflinuxfs3"
 [[metadata.dependencies]]
 id      = "riff-invoker-node"
 name    = "riff Node Invoker"
-version = "0.1.2"
-uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.1.2/node-function-invoker-0.1.2.tgz"
-sha256  = "53f5f8d7942d5281dddd96439903479ff11c652855003944ab3127f662de56d9"
+version = "0.2.0+snapshot"
+uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/latest/node-function-invoker.tgz"
+sha256  = "ba6a2fbac08ee4969d3288eec08ded2b7e38a427c70d52d76074912a050316ee"
 stacks  = [
   "io.buildpacks.stacks.bionic",
   "org.cloudfoundry.stacks.cflinuxfs3",

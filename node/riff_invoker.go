@@ -19,6 +19,7 @@ package node
 
 import (
 	"fmt"
+	"github.com/projectriff/streaming-http-adapter-buildpack/adapter"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -77,7 +78,11 @@ func BuildPlanContribution(d detect.Detect, m function.Metadata) buildplan.Build
 	}
 	r.Metadata[FunctionArtifact] = m.Artifact
 
-	return buildplan.BuildPlan{node.Dependency: n, Dependency: r}
+	p := d.BuildPlan[adapter.Dependency]
+	if p.Metadata == nil {
+		p.Metadata = buildplan.Metadata{}
+	}
+	return buildplan.BuildPlan{node.Dependency: n, Dependency: r, adapter.Dependency: p}
 }
 
 // Contribute expands the node invoker tgz and creates launch configurations that run "node server.js"
@@ -109,12 +114,12 @@ func (r RiffNodeInvoker) Contribute() error {
 
 	command := fmt.Sprintf(`node %s/server.js`, r.invokerLayer.Root)
 
-	return r.layers.WriteApplicationMetadata(layers.Metadata{
+	return r.layers.WriteApplicationMetadata(adapter.Adapt(layers.Metadata{
 		Processes: layers.Processes{
 			layers.Process{Type: "function", Command: command},
 			layers.Process{Type: "web", Command: command},
 		},
-	})
+	}))
 }
 
 func NewNodeInvoker(build build.Build) (RiffNodeInvoker, bool, error) {

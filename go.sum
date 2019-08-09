@@ -11,6 +11,7 @@ github.com/buildpack/libbuildpack v1.20.0/go.mod h1:GNN9x3mIGqolLBXj5z1K5kA22Wvr
 github.com/cloudfoundry/dagger v0.0.0-20190708210935-79ba5190b629/go.mod h1:PXeUHc4d2vAVO/31jFE6uD09w/yFfzs4kcayAVEvnEI=
 github.com/cloudfoundry/libcfbuildpack v1.51.0 h1:5oNy1l5N853aeoMp1tT0My6JMOCwyVWUp8p5lotbcJM=
 github.com/cloudfoundry/libcfbuildpack v1.51.0/go.mod h1:oogsh9HVg38DOrnw9xmQHpI2Gvxp8RFCw7nTReJjipI=
+github.com/cloudfoundry/libcfbuildpack v1.75.0/go.mod h1:QGm+nzixn579dvQNlS7ZQET541y2hEpZ0/5uNxkQ04Y=
 github.com/cloudfoundry/libcfbuildpack v1.76.0/go.mod h1:QGm+nzixn579dvQNlS7ZQET541y2hEpZ0/5uNxkQ04Y=
 github.com/cloudfoundry/libcfbuildpack v1.78.1-0.20190718180120-55da0fdbe1a4 h1:N6vrtX1uFcZPPdeWiykpzDKiYlE5k6OA2wOX0HRUeTQ=
 github.com/cloudfoundry/libcfbuildpack v1.78.1-0.20190718180120-55da0fdbe1a4/go.mod h1:nqxdAEdvcSYRZqsFL+uV1+coatU1pqz3EyPST4/e8Ls=
@@ -59,6 +60,8 @@ github.com/onsi/gomega v1.5.0/go.mod h1:ex+gbHU/CVuBBDIJjb2X0qEXbFg53c61hWP/1Cpa
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/projectriff/libfnbuildpack v0.2.1-0.20190502033053-c390bd65d0f5 h1:itlgvKgsM2hrcgu3gzHVMALfcYiYCf+8ySuhI2hQQ4s=
 github.com/projectriff/libfnbuildpack v0.2.1-0.20190502033053-c390bd65d0f5/go.mod h1:3t+ZSFbdJRHO574/n86R/GnwePu4FQiPyRr0u5Yis2Q=
+github.com/projectriff/streaming-http-adapter-buildpack v0.0.0-20190809104030-6dee81479d4e h1:wrODeZiwG2o2wHiNu2n5g0MrzEuEYK6tAVfYFmbKEjI=
+github.com/projectriff/streaming-http-adapter-buildpack v0.0.0-20190809104030-6dee81479d4e/go.mod h1:xMWXZCpuMs4K2cj3+zdFqwswJQTq70DuYha76SjtsOY=
 github.com/sclevine/spec v1.2.0 h1:1Jwdf9jSfDl9NVmt8ndHqbTZ7XCCPbh1jI3hkDBHVYA=
 github.com/sclevine/spec v1.2.0/go.mod h1:W4J29eT/Kzv7/b9IWLB055Z+qvVC9vt0Arko24q7p+U=
 github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 h1:nIPpBwaJSVYIxUFsDv3M8ofmx9yWTog9BfvIu0q41lo=

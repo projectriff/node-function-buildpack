@@ -17,6 +17,7 @@
 package node_test
 
 import (
+	"github.com/projectriff/streaming-http-adapter-buildpack/adapter"
 	"path/filepath"
 	"testing"
 
@@ -79,6 +80,9 @@ func TestDetect(t *testing.T) {
 				node.Dependency: buildplan.Dependency{
 					Metadata: buildplan.Metadata{node.FunctionArtifact: ""},
 				},
+				adapter.Dependency: buildplan.Dependency{
+					Metadata: map[string]interface{}{},
+				},
 			}))
 		})
 
@@ -95,6 +99,9 @@ func TestDetect(t *testing.T) {
 				},
 				node.Dependency: buildplan.Dependency{
 					Metadata: buildplan.Metadata{node.FunctionArtifact: "my.js"},
+				},
+				adapter.Dependency: buildplan.Dependency{
+					Metadata: map[string]interface{}{},
 				},
 			}))
 		})
