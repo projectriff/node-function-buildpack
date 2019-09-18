@@ -6,8 +6,8 @@ require (
 	github.com/cloudfoundry/node-engine-cnb v0.0.16
 	github.com/cloudfoundry/npm-cnb v0.0.12
 	github.com/onsi/gomega v1.5.0
-	github.com/projectriff/libfnbuildpack v0.2.1-0.20190502033053-c390bd65d0f5
-	github.com/projectriff/streaming-http-adapter-buildpack v0.0.0-20190809104030-6dee81479d4e
+	github.com/projectriff/libfnbuildpack v0.2.1-0.20190904233626-b98851b9b021
+	github.com/projectriff/streaming-http-adapter-buildpack v0.0.0-20190819131307-0e01a0f5d5e2
 	github.com/sclevine/spec v1.2.0
 )
 
