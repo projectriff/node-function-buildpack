@@ -1,20 +1,23 @@
 buildpacks = [
-  { id = "io.projectriff.node",          latest = true, uri = "../../artifactory/io/projectriff/node/io.projectriff.node/latest" },
-  { id = "org.cloudfoundry.node-engine", latest = true, uri = "https://github.com/cloudfoundry/node-engine-cnb/releases/download/v0.0.16/node-engine-cnb-0.0.16.tgz" },
-  { id = "org.cloudfoundry.npm",         latest = true, uri = "https://github.com/cloudfoundry/npm-cnb/releases/download/v0.0.12/npm-cnb-0.0.12.tgz" },
-  { id = "io.projectriff.streaming-http-adapter",   latest = true, uri = "https://storage.googleapis.com/projectriff/streaming-http-adapter-buildpack/latest.tgz" }
+  { id = "io.projectriff.node",          uri = "../../artifactory/io/projectriff/node/io.projectriff.node/latest" },
+  { id = "org.cloudfoundry.node-engine", uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.node-engine/org.cloudfoundry.node-engine-0.0.56-any-stack-a47881f8.tgz" },
+  { id = "org.cloudfoundry.npm",         uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.npm/org.cloudfoundry.npm-0.0.33-any-stack-07c7a3d5.tgz" },
 ]
 
-[[groups]]
-  # node functions
-  buildpacks = [
-    { id = "org.cloudfoundry.node-engine", version = 'latest', optional = true },
-    { id = "org.cloudfoundry.npm",         version = 'latest', optional = true },
-    { id = "io.projectriff.streaming-http-adapter", version = 'latest' },
-    { id = "io.projectriff.node",          version = 'latest' },
-  ]
+[[order]]
+group = [
+  { id = "org.cloudfoundry.node-engine" },
+  { id = "org.cloudfoundry.npm" },
+  { id = "io.projectriff.node" },
+]
+
+[[order]]
+group = [
+  { id = "org.cloudfoundry.node-engine" },
+  { id = "io.projectriff.node" },
+]
 
 [stack]
-  id = "io.buildpacks.stacks.bionic"
-  build-image = "cnbs/build"
-  run-image = "cnbs/run"
+id          = "io.buildpacks.stacks.bionic"
+build-image = "cloudfoundry/build:base-cnb"
+run-image   = "cloudfoundry/run:base-cnb"

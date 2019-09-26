@@ -10,8 +10,8 @@ test:
 
 acceptance:
 	pack create-builder -b acceptance/testdata/builder.toml projectriff/builder
-	docker pull cnbs/build
-	docker pull cnbs/run
+	docker pull cloudfoundry/build:base-cnb
+	docker pull cloudfoundry/run:base-cnb
 	GO111MODULE=on go test -v -tags=acceptance ./acceptance
 
 artifactory/io/projectriff/node/io.projectriff.node: buildpack.toml $(GO_SOURCES)

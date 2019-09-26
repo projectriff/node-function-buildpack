@@ -17,122 +17,161 @@
 package node_test
 
 import (
-	"github.com/projectriff/streaming-http-adapter-buildpack/adapter"
+	"fmt"
 	"path/filepath"
 	"testing"
 
 	"github.com/buildpack/libbuildpack/buildplan"
+	"github.com/cloudfoundry/libcfbuildpack/detect"
 	"github.com/cloudfoundry/libcfbuildpack/test"
-	nodeCNB "github.com/cloudfoundry/node-engine-cnb/node"
+	nodeEngine "github.com/cloudfoundry/node-engine-cnb/node"
 	"github.com/cloudfoundry/npm-cnb/modules"
-	. "github.com/onsi/gomega"
+	"github.com/onsi/gomega"
 	"github.com/projectriff/libfnbuildpack/function"
 	"github.com/projectriff/node-function-buildpack/node"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
 )
 
-func TestName(t *testing.T) {
-	spec.Run(t, "Id", func(t *testing.T, _ spec.G, it spec.S) {
+func TestBuildpack(t *testing.T) {
+	spec.Run(t, "Buildpack", func(t *testing.T, when spec.G, it spec.S) {
 
-		g := NewGomegaWithT(t)
+		g := gomega.NewWithT(t)
 
-		it("has the right id", func() {
-			b := node.NewBuildpack()
-
-			g.Expect(b.Id()).To(Equal("node"))
-		})
-	}, spec.Report(report.Terminal{}))
-}
-
-func TestDetect(t *testing.T) {
-	spec.Run(t, "Detect", func(t *testing.T, _ spec.G, it spec.S) {
-
-		g := NewGomegaWithT(t)
-
-		var f *test.DetectFactory
-		var m function.Metadata
-		var b function.Buildpack
+		var (
+			b node.Buildpack
+			f *test.DetectFactory
+		)
 
 		it.Before(func() {
+			b = node.Buildpack{}
 			f = test.NewDetectFactory(t)
-			m = function.Metadata{}
-			b = node.NewBuildpack()
 		})
 
-		it("fails by default", func() {
-			plan, err := b.Detect(f.Detect, m)
+		when("id", func() {
 
-			g.Expect(err).To(BeNil())
-			g.Expect(plan).To(BeNil())
+			it("returns id", func() {
+				g.Expect(b.Id()).To(gomega.Equal("node"))
+			})
 		})
 
-		it("passes if the NPM app BP applied", func() {
-			f.AddBuildPlan(modules.Dependency, buildplan.Dependency{})
+		when("detect", func() {
 
-			plan, err := b.Detect(f.Detect, m)
+			it("fails with non-js handler", func() {
+				test.TouchFile(t, f.Detect.Application.Root, "test-file")
 
-			g.Expect(err).To(BeNil())
-			g.Expect(plan).To(Equal(&buildplan.BuildPlan{
-				nodeCNB.Dependency: buildplan.Dependency{
-					Metadata: buildplan.Metadata{"launch": true, "build": true},
-				},
-				node.Dependency: buildplan.Dependency{
-					Metadata: buildplan.Metadata{node.FunctionArtifact: ""},
-				},
-				adapter.Dependency: buildplan.Dependency{
-					Metadata: map[string]interface{}{},
-				},
-			}))
-		})
+				code, err := b.Detect(f.Detect, function.Metadata{Artifact: "test-file"})
+				g.Expect(code).To(gomega.Equal(function.Error_ComponentInternal))
+				g.Expect(err).To(gomega.MatchError(fmt.Sprintf("artifact is not a javascript file: %s", filepath.Join(f.Detect.Application.Root, "test-file"))))
+			})
 
-		it("passes if the NPM app BP did not apply, but artifact is .js", func() {
-			test.WriteFile(t, filepath.Join(f.Detect.Application.Root, "my.js"), "module.exports = x => x**2")
-			m.Artifact = "my.js"
+			it("passes without handler", func() {
+				g.Expect(b.Detect(f.Detect, function.Metadata{})).To(gomega.Equal(detect.PassStatusCode))
+				g.Expect(f.Plans).To(test.HavePlans(buildplan.Plan{
+					Provides: []buildplan.Provided{
+						{Name: node.Dependency},
+					},
+					Requires: []buildplan.Required{
+						{
+							Name: nodeEngine.Dependency,
+							Metadata: map[string]interface{}{
+								"build":  true,
+								"launch": true,
+							},
+						},
+						{Name: modules.Dependency},
+						{Name: node.Dependency},
+					},
+				}))
+			})
 
-			plan, err := b.Detect(f.Detect, m)
+			it("passes with handler", func() {
+				test.TouchFile(t, f.Detect.Application.Root, "test-file.js")
 
-			g.Expect(err).To(BeNil())
-			g.Expect(plan).To(Equal(&buildplan.BuildPlan{
-				nodeCNB.Dependency: buildplan.Dependency{
-					Metadata: buildplan.Metadata{"launch": true, "build": true},
-				},
-				node.Dependency: buildplan.Dependency{
-					Metadata: buildplan.Metadata{node.FunctionArtifact: "my.js"},
-				},
-				adapter.Dependency: buildplan.Dependency{
-					Metadata: map[string]interface{}{},
-				},
-			}))
-		})
-	}, spec.Report(report.Terminal{}))
-}
+				g.Expect(b.Detect(f.Detect, function.Metadata{Artifact: "test-file.js"})).To(gomega.Equal(detect.PassStatusCode))
+				g.Expect(f.Plans).To(test.HavePlans(
+					buildplan.Plan{
+						Provides: []buildplan.Provided{
+							{Name: node.Dependency},
+						},
+						Requires: []buildplan.Required{
+							{
+								Name: nodeEngine.Dependency,
+								Metadata: map[string]interface{}{
+									"build":  true,
+									"launch": true,
+								},
+							},
+							{Name: modules.Dependency},
+							{Name: node.Dependency},
+						},
+					},
+					buildplan.Plan{
+						Provides: []buildplan.Provided{
+							{Name: node.Dependency},
+						},
+						Requires: []buildplan.Required{
+							{
+								Name: nodeEngine.Dependency,
+								Metadata: map[string]interface{}{
+									"build":  true,
+									"launch": true,
+								},
+							},
+							{
+								Name: node.Dependency,
+								Metadata: map[string]interface{}{
+									node.FunctionArtifact: "test-file.js",
+								},
+							},
+						},
+					},
+				))
+			})
 
-func TestBuild(t *testing.T) {
-	spec.Run(t, "Build", func(t *testing.T, _ spec.G, it spec.S) {
-		g := NewGomegaWithT(t)
+			it("passes with non-js handler and override", func() {
+				test.TouchFile(t, f.Detect.Application.Root, "test-file")
 
-		var f *test.BuildFactory
-		var b function.Buildpack
-
-		it.Before(func() {
-			f = test.NewBuildFactory(t)
-			b = node.NewBuildpack()
-		})
-
-		it("won't build unless passed detection", func() {
-			err := b.Build(f.Build)
-
-			g.Expect(err).To(MatchError("buildpack passed detection but did not know how to actually build"))
-		})
-
-		it.Pend("will build if passed detection", func() {
-			f.AddBuildPlan(node.Dependency, buildplan.Dependency{})
-			f.AddDependency(node.Dependency, ".")
-
-			err := b.Build(f.Build)
-
-			g.Expect(err).To(BeNil())
+				g.Expect(b.Detect(f.Detect, function.Metadata{Artifact: "test-file", Override: "node"})).To(gomega.Equal(detect.PassStatusCode))
+				g.Expect(f.Plans).To(test.HavePlans(
+					buildplan.Plan{
+						Provides: []buildplan.Provided{
+							{Name: node.Dependency},
+						},
+						Requires: []buildplan.Required{
+							{
+								Name: nodeEngine.Dependency,
+								Metadata: map[string]interface{}{
+									"build":  true,
+									"launch": true,
+								},
+							},
+							{Name: modules.Dependency},
+							{Name: node.Dependency},
+						},
+					},
+					buildplan.Plan{
+						Provides: []buildplan.Provided{
+							{Name: node.Dependency},
+						},
+						Requires: []buildplan.Required{
+							{
+								Name: nodeEngine.Dependency,
+								Metadata: map[string]interface{}{
+									"build":  true,
+									"launch": true,
+								},
+							},
+							{
+								Name: node.Dependency,
+								Metadata: map[string]interface{}{
+									node.FunctionArtifact: "test-file",
+								},
+							},
+						},
+					},
+				))
+			})
 		})
 	}, spec.Report(report.Terminal{}))
 }

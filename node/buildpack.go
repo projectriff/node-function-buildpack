@@ -19,54 +19,105 @@ package node
 
 import (
 	"fmt"
+	"path/filepath"
 
 	"github.com/buildpack/libbuildpack/buildplan"
 	"github.com/cloudfoundry/libcfbuildpack/build"
 	"github.com/cloudfoundry/libcfbuildpack/detect"
+	"github.com/cloudfoundry/libcfbuildpack/helper"
+	"github.com/cloudfoundry/node-engine-cnb/node"
 	"github.com/cloudfoundry/npm-cnb/modules"
 	"github.com/projectriff/libfnbuildpack/function"
 )
 
-type NodeBuildpack struct {
-	id string
-}
+type Buildpack struct{}
 
-func (bp *NodeBuildpack) Id() string {
-	return bp.id
-}
+func (b Buildpack) Build(build build.Build) (int, error) {
+	if f, ok, err := NewFunction(build); err != nil {
+		return build.Failure(function.Error_ComponentInitialization), err
+	} else if ok {
+		if err := f.Contribute(); err != nil {
+			return build.Failure(function.Error_ComponentContribution), err
+		}
 
-func (bp *NodeBuildpack) Detect(d detect.Detect, m function.Metadata) (*buildplan.BuildPlan, error) {
-	if detected, err := bp.detect(d, m); err != nil {
-		return nil, err
-	} else if detected {
-		plan := BuildPlanContribution(d, m)
-		return &plan, nil
+		if streaming, err := NewStreamingHTTPAdapter(build); err != nil {
+			return build.Failure(function.Error_ComponentInitialization), err
+		} else {
+			if err := streaming.Contribute(); err != nil {
+				return build.Failure(function.Error_ComponentContribution), err
+			}
+		}
+
+		if invoker, ok, err := NewInvoker(build); err != nil {
+			return build.Failure(function.Error_ComponentInitialization), err
+		} else if ok {
+			if err := invoker.Contribute(); err != nil {
+				return build.Failure(function.Error_ComponentContribution), err
+			}
+		}
 	}
-	// didn't detect
-	return nil, nil
+
+	return build.Success()
 }
 
-func (*NodeBuildpack) detect(d detect.Detect, m function.Metadata) (bool, error) {
-	// Try npm
-	if _, ok := d.BuildPlan[modules.Dependency]; ok {
-		return true, nil
+func (b Buildpack) Detect(detect detect.Detect, metadata function.Metadata) (int, error) {
+	var plans []buildplan.Plan
+
+	plans = append(plans, buildplan.Plan{
+		Provides: []buildplan.Provided{
+			{Name: Dependency},
+		},
+		Requires: []buildplan.Required{
+			{
+				Name: node.Dependency,
+				Metadata: map[string]interface{}{
+					"build":  true,
+					"launch": true,
+				},
+			},
+			{Name: modules.Dependency},
+			{Name: Dependency},
+		},
+	})
+
+	if metadata.Artifact == "" {
+		return detect.Pass(plans...)
 	}
-	// Try node
-	return DetectNode(d, m)
+
+	path := filepath.Join(detect.Application.Root, metadata.Artifact)
+
+	if ok, err := helper.FileExists(path); err != nil || !ok {
+		return detect.Pass(plans...)
+	}
+
+	if b.Id() != metadata.Override && filepath.Ext(path) != ".js" {
+		return detect.Error(function.Error_ComponentInternal), fmt.Errorf("artifact is not a javascript file: %s", path)
+	}
+
+	plans = append(plans, buildplan.Plan{
+		Provides: []buildplan.Provided{
+			{Name: Dependency},
+		},
+		Requires: []buildplan.Required{
+			{
+				Name: node.Dependency,
+				Metadata: map[string]interface{}{
+					"build":  true,
+					"launch": true,
+				},
+			},
+			{
+				Name: Dependency,
+				Metadata: map[string]interface{}{
+					FunctionArtifact: metadata.Artifact,
+				},
+			},
+		},
+	})
+
+	return detect.Pass(plans...)
 }
 
-func (*NodeBuildpack) Build(b build.Build) error {
-	invoker, ok, err := NewNodeInvoker(b)
-	if err != nil {
-		return err
-	} else if !ok {
-		return fmt.Errorf("buildpack passed detection but did not know how to actually build")
-	}
-	return invoker.Contribute()
-}
-
-func NewBuildpack() function.Buildpack {
-	return &NodeBuildpack{
-		id: "node",
-	}
+func (b Buildpack) Id() string {
+	return "node"
 }

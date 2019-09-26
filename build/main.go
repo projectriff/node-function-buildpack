@@ -22,6 +22,5 @@ import (
 )
 
 func main() {
-	buildpack := node.NewBuildpack()
-	function.Build(buildpack)
+	function.Buildpack{BuildpackImplementation: node.Buildpack{}}.Build()
 }
