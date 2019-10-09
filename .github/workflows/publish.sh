@@ -4,17 +4,16 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-gcloud auth activate-service-account --key-file <(echo ${GCLOUD_CLIENT_SECRET} | base64 --decode)
-
 version=$(sed -n 's|version = \"\(.*\)\"|\1|p' buildpack.toml | head -n1)
 git_sha=$(git rev-parse HEAD)
 git_timestamp=$(TZ=UTC git show --quiet --date='format-local:%Y%m%d%H%M%S' --format="%cd")
-git_branch=${TRAVIS_BRANCH}
+git_branch=${1:11} # drop 'refs/head/' prefix
 slug=${version}
 if [[ ${version} = *"-SNAPSHOT" ]] ; then
   # append timestamp and sha to slug
   slug=${slug}-${git_timestamp}-${git_sha:0:16}
 fi
+
 echo "Publishing buildpack"
 gsutil cp -a public-read artifactory/io/projectriff/node/io.projectriff.node/${version}/io.projectriff.node-${slug}.tgz gs://projectriff/node-function-buildpack/
 if [ "${git_branch}" = master ] ; then
