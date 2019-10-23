@@ -10,5 +10,4 @@ require (
 	github.com/onsi/gomega v1.7.0
 	github.com/projectriff/libfnbuildpack v0.3.0
 	github.com/sclevine/spec v1.3.0
-	golang.org/x/net v0.0.0-20190926025831-c00fd9afed17 // indirect
 )
