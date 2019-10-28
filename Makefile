@@ -8,7 +8,7 @@ build: artifactory/io/projectriff/node/io.projectriff.node
 test:
 	go test -v ./...
 
-acceptance:
+acceptance: acceptance/testdata/builder.toml
 	pack create-builder -b acceptance/testdata/builder.toml projectriff/builder
 	docker pull cloudfoundry/build:base-cnb
 	docker pull cloudfoundry/run:base-cnb
@@ -20,6 +20,10 @@ artifactory/io/projectriff/node/io.projectriff.node: buildpack.toml $(GO_SOURCES
 	mkdir $@/latest 					&& \
 	tar -C $@/latest -xzf $@/*/*.tgz
 
+acceptance/testdata/builder.toml: acceptance/testdata/builder.toml.tpl go.mod
+	./ci/apply-template.sh acceptance/testdata/builder.toml.tpl > acceptance/testdata/builder.toml
+
 clean:
 	rm -fR artifactory/
 	rm -fR dependency-cache/
+	rm acceptance/testdata/builder.toml
