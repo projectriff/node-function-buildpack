@@ -28,6 +28,7 @@ github.com/buildpack/libbuildpack v1.25.2/go.mod h1:cBmq8aozSDfy+RiKCERQbT6lk0M/
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cloudfoundry/dagger v0.0.0-20190910211006-e7385ebe12c4/go.mod h1:vbeid+MuoJPZXM8fGvJy87lDLvu/q0Rs1NN4M6lFFg4=
 github.com/cloudfoundry/dagger v0.0.0-20191016144449-e21676fc28c9/go.mod h1:xqRl2xy0Q75hzZXM/Cv2DZNl7OIzaT/6JOy8TZbb4yk=
+github.com/cloudfoundry/dagger v0.0.0-20191025181811-15ebd2408e87/go.mod h1:xqRl2xy0Q75hzZXM/Cv2DZNl7OIzaT/6JOy8TZbb4yk=
 github.com/cloudfoundry/libcfbuildpack v1.76.0/go.mod h1:QGm+nzixn579dvQNlS7ZQET541y2hEpZ0/5uNxkQ04Y=
 github.com/cloudfoundry/libcfbuildpack v1.86.0/go.mod h1:oPScuxhq4GUuWRpDmbc/M4qK9ta9bLc5egQFlNdYjUg=
 github.com/cloudfoundry/libcfbuildpack v1.87.2 h1:fTMiMguCubJc9ZbRN3oI3ZWPB4swixY6oQDDW+m/2vU=
@@ -40,6 +41,8 @@ github.com/cloudfoundry/node-engine-cnb v0.0.56 h1:O8GcCbxt9o/rX0NbicTIxygmiacF8
 github.com/cloudfoundry/node-engine-cnb v0.0.56/go.mod h1:zzRXJtZojZy2cbntepZIKEPiOO/YtyQ9QLP8bHWWt/M=
 github.com/cloudfoundry/node-engine-cnb v0.0.82 h1:kFYGwbifu2LExpLYpNp8fFcAiG/UqymhSH4DqIGn+BU=
 github.com/cloudfoundry/node-engine-cnb v0.0.82/go.mod h1:1YHrHbfqK/6J632nwu0RjZ0lJ9Y32+wXcV55/unvO8I=
+github.com/cloudfoundry/node-engine-cnb v0.0.85 h1:gS3s39vHxwYnnPw+XADVTKiu/rqX3zCRqxt//g6ZMp4=
+github.com/cloudfoundry/node-engine-cnb v0.0.85/go.mod h1:PhkqfY0KpH5TiKOPr4ROaHHxer4dfmnJmxcLZL2VFuA=
 github.com/cloudfoundry/npm-cnb v0.0.33 h1:Ci+82u14Pqev5LzVAgG58oJJrCEkFUKhFMtlEmBTlEY=
 github.com/cloudfoundry/npm-cnb v0.0.33/go.mod h1:NlgJ7pbI26Y/rM9YsnPCS+f6iwB0xM7gG/oCeH7lA80=
 github.com/cloudfoundry/npm-cnb v0.0.50 h1:M3oH0WvD8boTStiPxX0iAhq1WvBfJpnJO0C8ylGqUVI=
