@@ -113,6 +113,8 @@ github.com/cloudfoundry/npm-cnb v0.0.69 h1:PLu4CVXFaVml9uECR1b/pWD7zKwegWVOWYxi7
 github.com/cloudfoundry/npm-cnb v0.0.69/go.mod h1:oi5qE9jrWDUTFCQwkJBRopHW/BT1JuSfpDC22MtC4Us=
 github.com/cloudfoundry/npm-cnb v0.0.70 h1:0q4eKlCtt/62py3xfwlXBNhQDYSalhUxrhGZmTrkW2A=
 github.com/cloudfoundry/npm-cnb v0.0.70/go.mod h1:CaEGtuS6XOh4wPRMri7dDIHhXS51IVB/9qm35Yzo9A4=
+github.com/cloudfoundry/npm-cnb v0.0.71 h1:PhyMQk3fPcw/9IYP6kvC5YMbtRAsshDgeVkjAonu6RU=
+github.com/cloudfoundry/npm-cnb v0.0.71/go.mod h1:URKAFCHFXXkkjxGDbNcpw7WmwGIy0VuAT8VZDhpmR1Q=
 github.com/cloudfoundry/packit v0.0.0-20191014140300-f8d2e0b20a04/go.mod h1:m8hk5BTIclmOWMxv3aQKIU/0LA4FVe4XKC9o0VNsLow=
 github.com/cloudfoundry/packit v0.0.0-20191202164725-43d6fa19d96c/go.mod h1:FffmDGXYVSrrj9HlFP4XbnJnQi7jHcsElHujPGbfP3U=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
