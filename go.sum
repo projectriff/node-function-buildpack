@@ -30,6 +30,7 @@ github.com/buildpack/libbuildpack v1.25.3/go.mod h1:cBmq8aozSDfy+RiKCERQbT6lk0M/
 github.com/buildpack/libbuildpack v1.25.4/go.mod h1:GhVefAW5VEN0L2AWrupSzwMUeKd3N0UzT45oUAKcPCM=
 github.com/buildpack/libbuildpack v1.25.5/go.mod h1:GhVefAW5VEN0L2AWrupSzwMUeKd3N0UzT45oUAKcPCM=
 github.com/buildpack/libbuildpack v1.25.6/go.mod h1:bdzuJSU1TvfvrSn6evQ/Hr53A6d+8yp3KFSII1/kShE=
+github.com/buildpack/libbuildpack v1.25.7/go.mod h1:9WwFxe8UUWFyC4+CQxt5poscEryVm8KQaSJdgms7iGk=
 github.com/buildpack/libbuildpack v1.25.8/go.mod h1:l4/s95NP96DffC5A+U7ezwqCF9JNGTnoagqeB+dimSQ=
 github.com/cheggaaa/pb v2.0.7+incompatible/go.mod h1:pQciLPpbU0oxA0h+VJYYLxO+XeDQb5pZijXscXHm81s=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
@@ -58,6 +59,7 @@ github.com/cloudfoundry/libcfbuildpack v1.91.8 h1:WcQJqfNagAS8l1bRTDC7cWze4kMi89
 github.com/cloudfoundry/libcfbuildpack v1.91.8/go.mod h1:M5pzT0AkkHkUIM/LNnrHK62XRyIo7BzMdnITccOJVao=
 github.com/cloudfoundry/libcfbuildpack v1.91.9 h1:sB0RBhYphryx2q+VahRrFoX3AZOMmr+sIuGIEdIZ01U=
 github.com/cloudfoundry/libcfbuildpack v1.91.9/go.mod h1:cdFsbPedwjca4UIBjWwNV1VARoO/OEHxHT5yc2u3TYs=
+github.com/cloudfoundry/libcfbuildpack v1.91.11/go.mod h1:3LGlIqcmqoCn2IvcnmVJrX7e9UfsMazlXE7ovsVR9YE=
 github.com/cloudfoundry/libcfbuildpack v1.91.13 h1:Opm+/pD3Mxzv0suCijEuQGwSZk2b9TYBl/ypMxIkRZk=
 github.com/cloudfoundry/libcfbuildpack v1.91.13/go.mod h1:w2sZDJ33eE67rvPsxoY4QzcFgO3N3p3fY63UuZo72Ds=
 github.com/cloudfoundry/node-engine-cnb v0.0.85 h1:gS3s39vHxwYnnPw+XADVTKiu/rqX3zCRqxt//g6ZMp4=
@@ -124,6 +126,8 @@ github.com/cloudfoundry/npm-cnb v0.0.71 h1:PhyMQk3fPcw/9IYP6kvC5YMbtRAsshDgeVkjA
 github.com/cloudfoundry/npm-cnb v0.0.71/go.mod h1:URKAFCHFXXkkjxGDbNcpw7WmwGIy0VuAT8VZDhpmR1Q=
 github.com/cloudfoundry/npm-cnb v0.0.72 h1:7eyYYhO37TFqahAmmsvBn4f4InvlylDDmn62IhYgcFo=
 github.com/cloudfoundry/npm-cnb v0.0.72/go.mod h1:lNhC2lcWl4KEzLSiO+hLvZPTl6E5FPUpMyZlIoiJhm0=
+github.com/cloudfoundry/npm-cnb v0.0.76 h1:cWVjhydymbE6INRknV+xl2baQzZCcoGUah4g4v+jcKg=
+github.com/cloudfoundry/npm-cnb v0.0.76/go.mod h1:Ybxcdu7X2AmlYi8H1vfeoNF9b0AyeEEpONRix2chPmA=
 github.com/cloudfoundry/packit v0.0.0-20191014140300-f8d2e0b20a04/go.mod h1:m8hk5BTIclmOWMxv3aQKIU/0LA4FVe4XKC9o0VNsLow=
 github.com/cloudfoundry/packit v0.0.0-20191202164725-43d6fa19d96c/go.mod h1:FffmDGXYVSrrj9HlFP4XbnJnQi7jHcsElHujPGbfP3U=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
@@ -187,6 +191,7 @@ github.com/onsi/ginkgo v1.11.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+
 github.com/onsi/gomega v1.7.0 h1:XPnZz8VVBHjVsy1vzJmRwIcSwiUO+JFfrv/xGiigmME=
 github.com/onsi/gomega v1.7.0/go.mod h1:ex+gbHU/CVuBBDIJjb2X0qEXbFg53c61hWP/1CpauHY=
 github.com/onsi/gomega v1.7.1/go.mod h1:XdKZgCCFLUoM/7CFJVPcG8C1xQ1AJ0vpAezJrB7JYyY=
+github.com/onsi/gomega v1.8.0/go.mod h1:Ho0h+IUsWyvy1OpqCwxlQ/21gkhVunqlU8fDGcoTdcA=
 github.com/onsi/gomega v1.8.1 h1:C5Dqfs/LeauYDX0jJXIe2SWmwCbGzx9yF8C8xy3Lh34=
 github.com/onsi/gomega v1.8.1/go.mod h1:Ho0h+IUsWyvy1OpqCwxlQ/21gkhVunqlU8fDGcoTdcA=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
