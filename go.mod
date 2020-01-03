@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/buildpack/libbuildpack v1.25.9
-	github.com/cloudfoundry/libcfbuildpack v1.91.13
+	github.com/cloudfoundry/libcfbuildpack v1.91.16
 	github.com/cloudfoundry/node-engine-cnb v0.0.129
 	github.com/cloudfoundry/npm-cnb v0.0.79
 	github.com/onsi/gomega v1.8.1
