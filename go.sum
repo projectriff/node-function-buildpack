@@ -40,6 +40,8 @@ github.com/cloudfoundry/libcfbuildpack v1.91.19 h1:9tZR/w4sngP5Von694tpkLsK+PYfV
 github.com/cloudfoundry/libcfbuildpack v1.91.19/go.mod h1:LLXPiEr7YjuU4sx0lHNBeg8cnWImlwtUSKUOp5tLN6U=
 github.com/cloudfoundry/node-engine-cnb v0.0.129 h1:kKPF7lF3xBVXwa6nOpaXGTln2MDpEnojpyS68cKDxIg=
 github.com/cloudfoundry/node-engine-cnb v0.0.129/go.mod h1:7uq0wX619V/shLyg2gdaSH/8/Z+Nw8/RResTYkKvEHs=
+github.com/cloudfoundry/node-engine-cnb v0.0.132 h1:njtbAYiIo33tErDJK+OFHJEnB7UI70to1qmswoRw2nQ=
+github.com/cloudfoundry/node-engine-cnb v0.0.132/go.mod h1:f3yK3kYtAxGaKffpo+PTOtgDnGfmxHo/taUEkhyv8qQ=
 github.com/cloudfoundry/npm-cnb v0.0.82 h1:QK7uz26wscuQ79ihQGHImdwb2zpP4yWUkT5uhVGDyvI=
 github.com/cloudfoundry/npm-cnb v0.0.82/go.mod h1:4tlvxS0YbZp7Nc0krGvLhtG22Mi0tyIDLRzxM5/Rf6c=
 github.com/cloudfoundry/packit v0.0.0-20191202164725-43d6fa19d96c/go.mod h1:FffmDGXYVSrrj9HlFP4XbnJnQi7jHcsElHujPGbfP3U=
