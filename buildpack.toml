@@ -29,8 +29,8 @@ id = "org.cloudfoundry.stacks.cflinuxfs3"
 id      = "riff-invoker-node"
 name    = "riff Node Invoker"
 version = "0.2.0+snapshot"
-uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.0-snapshot/snapshots/node-function-invoker-0.2.0-snapshot-52875764d588ed26f578296918a7c1061ca673fa.tgz"
-sha256  = "38daf0d3685df9b198077f63374cf3143fe9aac26acb6b73aea8241dc5f9b44b"
+uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.0-snapshot/snapshots/node-function-invoker-0.2.0-snapshot-2883a0cf551be1f58d1605484ebf285d1b47b268.tgz"
+sha256  = "1ba3812d8dfeb0cfbb6c6d28dcad917446a5a5a2868352ad723e3d8aec744f87"
 stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
 
   [[metadata.dependencies.licenses]]
