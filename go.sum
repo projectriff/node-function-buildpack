@@ -36,6 +36,7 @@ github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5P
 github.com/chzyer/test v0.0.0-20180213035817-a1ea475d72b1/go.mod h1:Q3SI9o4m/ZMnBNeIyt5eFwwo7qiLfzFZmjNmxjkiQlU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cloudfoundry/dagger v0.0.0-20191213212648-a45390236bb7/go.mod h1:PiNRNPj6nYimhASeft5kCrRhXzyKeqfkP9Wg+/7NivA=
+github.com/cloudfoundry/dagger v0.0.0-20200114192520-43fb0b3ec98f/go.mod h1:PiNRNPj6nYimhASeft5kCrRhXzyKeqfkP9Wg+/7NivA=
 github.com/cloudfoundry/libcfbuildpack v1.87.2 h1:fTMiMguCubJc9ZbRN3oI3ZWPB4swixY6oQDDW+m/2vU=
 github.com/cloudfoundry/libcfbuildpack v1.87.2/go.mod h1:u4rY3hScjPQg0o9TFSoXsPShiuQIqNRmAoXzQ2qPdsw=
 github.com/cloudfoundry/libcfbuildpack v1.89.0/go.mod h1:ufhp/bp0LxbDDwbf2Ms3Bf4x9YnLr9dkL1RTUYSdKg0=
@@ -63,6 +64,8 @@ github.com/cloudfoundry/npm-cnb v0.0.83 h1:68svp9UBTQbanifbJ0jyVKTecOYhOmBrEuBuA
 github.com/cloudfoundry/npm-cnb v0.0.83/go.mod h1:Mcb5T+XUKYnKzZx28BGVwQCjEakFdXdJ+zIFiMvSEnM=
 github.com/cloudfoundry/npm-cnb v0.0.85 h1:TA77dAXxViWbmmToO1kVLPvH8910bZsBqbYOqb/40N0=
 github.com/cloudfoundry/npm-cnb v0.0.85/go.mod h1:pOX20qpQI0LBqG56TcVwv08r8wcL3uNl23z8WsSr9n4=
+github.com/cloudfoundry/npm-cnb v0.0.86 h1:mbYNwzUKJBUVI8qtaAfADy/BA84UHL31sDjizeE/2pY=
+github.com/cloudfoundry/npm-cnb v0.0.86/go.mod h1:17UhMF8wtZSA3yC1VvkdRWPXa2T+4mNKJi6LdwVhgcU=
 github.com/cloudfoundry/packit v0.0.0-20191202164725-43d6fa19d96c/go.mod h1:FffmDGXYVSrrj9HlFP4XbnJnQi7jHcsElHujPGbfP3U=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
