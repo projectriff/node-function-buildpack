@@ -3,7 +3,7 @@ module github.com/projectriff/node-function-buildpack
 go 1.13
 
 require (
-	github.com/buildpack/libbuildpack v1.25.10
+	github.com/buildpack/libbuildpack v1.25.11
 	github.com/cloudfoundry/libcfbuildpack v1.91.22
 	github.com/cloudfoundry/node-engine-cnb v0.0.138
 	github.com/cloudfoundry/npm-cnb v0.0.86
