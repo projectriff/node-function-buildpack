@@ -17,7 +17,7 @@ api = "0.2"
 [buildpack]
 id = "io.projectriff.node"
 name = "Node Function Buildpack"
-version = "0.2.2-snapshot"
+version = "0.2.2-BUILD-SNAPSHOT"
 
 [[stacks]]
 id = "io.buildpacks.stacks.bionic"
