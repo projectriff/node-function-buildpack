@@ -44,8 +44,8 @@ stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3",
 id      = "streaming-http-adapter"
 name    = "riff Streaming HTTP Adapter"
 version = "0.1.0+snapshot"
-uri     = "https://storage.googleapis.com/projectriff/streaming-http-adapter/streaming-http-adapter-linux-amd64-0.5.0-20200207163938-0e42a6a969881b6c.tgz"
-sha256  = "d45e34d7469fde569c5209743b29e6bf0550c360bcc762859e049231ac649bc2"
+uri     = "https://storage.googleapis.com/projectriff/streaming-http-adapter/streaming-http-adapter-linux-amd64-0.5.1-snapshot-20200213082027-b607f3d37585fe77.tgz"
+sha256  = "7e4e54d1acdcb32b8f20c3007c4f4b491eda152d3b7ce6123acae9f951ebb6cc"
 stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3", "heroku-18" ]
 
   [[metadata.dependencies.licenses]]
