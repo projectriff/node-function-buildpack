@@ -25,7 +25,6 @@ import (
 	"github.com/cloudfoundry/libcfbuildpack/detect"
 	"github.com/cloudfoundry/libcfbuildpack/test"
 	nodeEngine "github.com/cloudfoundry/node-engine-cnb/node"
-	"github.com/cloudfoundry/npm-cnb/modules"
 	"github.com/onsi/gomega"
 	"github.com/projectriff/libfnbuildpack/function"
 	"github.com/projectriff/node-function-buildpack/node"
@@ -79,7 +78,7 @@ func TestBuildpack(t *testing.T) {
 								"launch": true,
 							},
 						},
-						{Name: modules.Dependency},
+						{Name: node.ModulesDependency},
 						{Name: node.Dependency},
 					},
 				}))
@@ -102,7 +101,7 @@ func TestBuildpack(t *testing.T) {
 									"launch": true,
 								},
 							},
-							{Name: modules.Dependency},
+							{Name: node.ModulesDependency},
 							{Name: node.Dependency},
 						},
 					},
@@ -146,7 +145,7 @@ func TestBuildpack(t *testing.T) {
 									"launch": true,
 								},
 							},
-							{Name: modules.Dependency},
+							{Name: node.ModulesDependency},
 							{Name: node.Dependency},
 						},
 					},

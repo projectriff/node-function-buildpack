@@ -26,7 +26,6 @@ import (
 	"github.com/cloudfoundry/libcfbuildpack/detect"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
 	"github.com/cloudfoundry/node-engine-cnb/node"
-	"github.com/cloudfoundry/npm-cnb/modules"
 	"github.com/projectriff/libfnbuildpack/function"
 )
 
@@ -75,7 +74,7 @@ func (b Buildpack) Detect(detect detect.Detect, metadata function.Metadata) (int
 					"launch": true,
 				},
 			},
-			{Name: modules.Dependency},
+			{Name: ModulesDependency},
 			{Name: Dependency},
 		},
 	})
