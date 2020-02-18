@@ -27,6 +27,7 @@ import (
 
 // Dependency is a key identifying the node invoker dependency in the build plan.
 const Dependency = "riff-invoker-node"
+const ModulesDependency = "node_modules"
 
 // Invoker represents the Java invoker contributed by the buildpack.
 type Invoker struct {
