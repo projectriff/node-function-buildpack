@@ -45,6 +45,8 @@ github.com/cloudfoundry/libcfbuildpack v1.91.23 h1:RCorc4zL0D4+mG2z/qOueFyYGz1j3
 github.com/cloudfoundry/libcfbuildpack v1.91.23/go.mod h1:h95FwHvbelcd0cSOhLC8SGEZXLwCMYh1dZo2kCr7lsA=
 github.com/cloudfoundry/node-engine-cnb v0.0.156 h1:QyoZuP3stI6+QDIkjEmdx9spJBqgH0rgLkxXTGzhtPM=
 github.com/cloudfoundry/node-engine-cnb v0.0.156/go.mod h1:30MDUVvHvR8Lwea930x7YwL8MB9x4elC+gOkzEkpnJ8=
+github.com/cloudfoundry/node-engine-cnb v0.0.157 h1:lYrcExtPUqsfDI+hp6dpGbfq4XGHwJTj3XOrTsw/QDc=
+github.com/cloudfoundry/node-engine-cnb v0.0.157/go.mod h1:30MDUVvHvR8Lwea930x7YwL8MB9x4elC+gOkzEkpnJ8=
 github.com/cloudfoundry/npm-cnb v0.1.2 h1:fwIIa9xBEgUgOGJszHVi/6f3LwCf5VhlluT2RuvYQ5U=
 github.com/cloudfoundry/npm-cnb v0.1.2/go.mod h1:csIjfPf2XCe8de2g//gX6igH73D3LDH/DtqFJ4W7J8s=
 github.com/cloudfoundry/occam v0.0.0-20200218193031-7e2052ce2f0f/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
