@@ -50,7 +50,7 @@ To build the node-function-buildpack you'll need
 - Go 1.13+
 - to run acceptance tests:
   - a running local docker daemon
-  - the [`pack`](https://github.com/buildpack/pack command line tool, [version](https://github.com/buildpack/pack/releases) `>= 0.5.0`.
+  - the [`pack`](https://github.com/buildpack/pack command line tool, [version](https://github.com/buildpack/pack/releases) `>= 0.9.0`.
 
 You can build the buildpack by running
 
