@@ -16,8 +16,6 @@ jobs:
     - uses: actions/setup-go@v1
       with:
         go-version: '1.13'
-    - name: Install pack
-      run: .github/workflows/install-pack.sh
     - name: Build & Test
       run: make test build acceptance
 
@@ -35,8 +33,6 @@ jobs:
     - uses: actions/setup-go@v1
       with:
         go-version: '1.13'
-    - name: Install pack
-      run: .github/workflows/install-pack.sh
     - name: gcloud auth
       run: |
         gcloud config set disable_prompts True
