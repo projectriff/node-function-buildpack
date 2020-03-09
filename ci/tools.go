@@ -6,5 +6,6 @@ package tools
 import (
 	_ "github.com/buildpacks/pack"
 	_ "github.com/cloudfoundry/node-engine-cnb/node"
+	_ "github.com/cloudfoundry/yarn-install-cnb/yarn"
 	_ "github.com/cloudfoundry/npm-cnb/npm"
 )

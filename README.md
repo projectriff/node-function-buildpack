@@ -10,7 +10,7 @@ support (and know how to build / run) languages supported by riff.
 In a nutshell, when combined with the other buildpacks present in the [riff builder](https://github.com/projectriff/builder) what this means (and especially when dealing with the riff CLI which takes care of the creation of the `riff.toml` file for you):
 
 - The presence of a `package.json` file and/or the fact that the `--artifact` flag points to a `.js` file will result in
-  1. the `npm installation` of the function if applicable
+  1. the `npm install`ation (or `yarn install`ation) of the function if applicable
   2. the execution as a node function thanks to the [node invoker](https://github.com/projectriff/node-function-invoker)
 - Ambiguity in the detection process will result in a build failure
 - The presence of the `--invoker` flag will entirely bypass the detection mechanism and force a given language/invoker
