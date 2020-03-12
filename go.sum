@@ -109,6 +109,8 @@ github.com/cloudfoundry/node-engine-cnb v0.0.161 h1:3Jy1j6MpCm9z3mm/b3bIADMOn0K9
 github.com/cloudfoundry/node-engine-cnb v0.0.161/go.mod h1:2AuvACGL0g/GsWXJ08EINlWsextIn/icl538a8Jmcy8=
 github.com/cloudfoundry/node-engine-cnb v0.0.162 h1:gapsEPUCycYkfEjfWE8JkfNWNAuMIGJWdpAuCmOF/xQ=
 github.com/cloudfoundry/node-engine-cnb v0.0.162/go.mod h1:2AuvACGL0g/GsWXJ08EINlWsextIn/icl538a8Jmcy8=
+github.com/cloudfoundry/node-engine-cnb v0.0.163 h1:KQLU1GHdGtIeIyGJwdckeZ3hd53TTAvkEnbmdp0AjnI=
+github.com/cloudfoundry/node-engine-cnb v0.0.163/go.mod h1:2AuvACGL0g/GsWXJ08EINlWsextIn/icl538a8Jmcy8=
 github.com/cloudfoundry/npm-cnb v0.1.3 h1:YH/o8lXBqPPR6sqHH+C0HurGeQqH0oJsD6QvDJveFWg=
 github.com/cloudfoundry/npm-cnb v0.1.3/go.mod h1:BnayasKvf6QnBpyeRQ2cOaZXHpH34xQv0qlczQyOA7M=
 github.com/cloudfoundry/occam v0.0.0-20200218193031-7e2052ce2f0f/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
