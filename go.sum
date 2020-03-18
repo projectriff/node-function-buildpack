@@ -63,6 +63,8 @@ github.com/cloudfoundry/npm-cnb v0.1.2 h1:fwIIa9xBEgUgOGJszHVi/6f3LwCf5VhlluT2Ru
 github.com/cloudfoundry/npm-cnb v0.1.2/go.mod h1:csIjfPf2XCe8de2g//gX6igH73D3LDH/DtqFJ4W7J8s=
 github.com/cloudfoundry/npm-cnb v0.1.3 h1:YH/o8lXBqPPR6sqHH+C0HurGeQqH0oJsD6QvDJveFWg=
 github.com/cloudfoundry/npm-cnb v0.1.3/go.mod h1:BnayasKvf6QnBpyeRQ2cOaZXHpH34xQv0qlczQyOA7M=
+github.com/cloudfoundry/npm-cnb v0.1.4 h1:j2ak6qsiNLOEd4m51y4bY74fH2zLZ2WBTkuSh8WHSIo=
+github.com/cloudfoundry/npm-cnb v0.1.4/go.mod h1:6bmtoTLoea9/VT51lxRkVzeK4TSWWoTcp2J+K7vbGtk=
 github.com/cloudfoundry/occam v0.0.0-20200218193031-7e2052ce2f0f/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
 github.com/cloudfoundry/occam v0.0.0-20200227222407-1c4318bd26e2/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
 github.com/cloudfoundry/packit v0.0.0-20200213185904-9d0fc689e7af h1:G6pQ5RECHT19D/xLRb25E/mYeTgTvD83PCRnrGlUaNE=
@@ -280,6 +282,7 @@ golang.org/x/sys v0.0.0-20200217220822-9197077df867/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200219091948-cb0a6d8edb6c/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200302150141-5c8b2ff67527/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200317113312-5766fd39f98d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
