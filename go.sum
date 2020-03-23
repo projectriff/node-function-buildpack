@@ -67,6 +67,8 @@ github.com/cloudfoundry/npm-cnb v0.1.3 h1:YH/o8lXBqPPR6sqHH+C0HurGeQqH0oJsD6QvDJ
 github.com/cloudfoundry/npm-cnb v0.1.3/go.mod h1:BnayasKvf6QnBpyeRQ2cOaZXHpH34xQv0qlczQyOA7M=
 github.com/cloudfoundry/npm-cnb v0.1.4 h1:j2ak6qsiNLOEd4m51y4bY74fH2zLZ2WBTkuSh8WHSIo=
 github.com/cloudfoundry/npm-cnb v0.1.4/go.mod h1:6bmtoTLoea9/VT51lxRkVzeK4TSWWoTcp2J+K7vbGtk=
+github.com/cloudfoundry/npm-cnb v0.1.5 h1:8KacQGAEFmYsk6DNZLpfPa/O5Xq+Xv6xwtHgnJINoHo=
+github.com/cloudfoundry/npm-cnb v0.1.5/go.mod h1:6bmtoTLoea9/VT51lxRkVzeK4TSWWoTcp2J+K7vbGtk=
 github.com/cloudfoundry/occam v0.0.0-20200218193031-7e2052ce2f0f/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
 github.com/cloudfoundry/occam v0.0.0-20200227222407-1c4318bd26e2/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
 github.com/cloudfoundry/packit v0.0.0-20200213185904-9d0fc689e7af h1:G6pQ5RECHT19D/xLRb25E/mYeTgTvD83PCRnrGlUaNE=
