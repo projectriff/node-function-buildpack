@@ -17,7 +17,7 @@ api = "0.2"
 [buildpack]
 id = "io.projectriff.node"
 name = "Node Function Buildpack"
-version = "0.3.0-BUILD-SNAPSHOT"
+version = "0.3.0"
 
 [[stacks]]
 id = "io.buildpacks.stacks.bionic"
@@ -31,26 +31,26 @@ id = "heroku-18"
 [[metadata.dependencies]]
 id      = "riff-invoker-node"
 name    = "riff Node Invoker"
-version = "0.2.0+snapshot"
-uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.0/node-function-invoker-0.2.0.tgz"
-sha256  = "4dd0d9f72ee7518ff7f90c29bd1af601d80ab9fe8b74856d4f0c315e5c7d26ad"
+version = "0.2.1"
+uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.1/node-function-invoker-0.2.1.tgz"
+sha256  = "28ca35defc2f247e1d129500c70659f17c2305f39d6e484d09eb7acf300a65d1"
 stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3", "heroku-18" ]
 
   [[metadata.dependencies.licenses]]
   type = "Apache-2.0"
-  uri  = "https://github.com/projectriff/node-function-invoker/blob/master/LICENSE"
+  uri  = "https://github.com/projectriff/node-function-invoker/blob/v0.2.1/LICENSE"
 
 [[metadata.dependencies]]
 id      = "streaming-http-adapter"
 name    = "riff Streaming HTTP Adapter"
-version = "0.1.0+snapshot"
-uri     = "https://storage.googleapis.com/projectriff/streaming-http-adapter/streaming-http-adapter-linux-amd64-0.5.1-snapshot-20200323155439-b82769959b90fa27.tgz"
-sha256  = "8be896fe3e238368ea86bf918f5db1b4f04f3b08b659f19182ad748b3ae9c9c3"
+version = "0.5.1"
+uri     = "https://storage.googleapis.com/projectriff/streaming-http-adapter/streaming-http-adapter-linux-amd64-0.5.1-20200401151133-c4cf1954147c10dc.tgz"
+sha256  = "eba285c4db60a306bb66d4be4f888aea8408696e3c534b6ca828eea11c893d5e"
 stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3", "heroku-18" ]
 
   [[metadata.dependencies.licenses]]
   type = "Apache-2.0"
-  uri  = "https://github.com/projectriff/streaming-http-adapter/blob/master/LICENSE"
+  uri  = "https://github.com/projectriff/streaming-http-adapter/blob/v0.5.1/LICENSE"
 
 [metadata]
   pre_package = "ci/build.sh"
