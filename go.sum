@@ -135,6 +135,8 @@ github.com/cloudfoundry/npm-cnb v0.1.10 h1:VlH1hEN02jHvabi3h84eUCy8Nu7njFnDf9rRM
 github.com/cloudfoundry/npm-cnb v0.1.10/go.mod h1:6bmtoTLoea9/VT51lxRkVzeK4TSWWoTcp2J+K7vbGtk=
 github.com/cloudfoundry/npm-cnb v0.1.11 h1:iyTCw+OAkN9RVaYeptwgcFW0iNnbQTaJKVXyCibGosU=
 github.com/cloudfoundry/npm-cnb v0.1.11/go.mod h1:6bmtoTLoea9/VT51lxRkVzeK4TSWWoTcp2J+K7vbGtk=
+github.com/cloudfoundry/npm-cnb v0.1.12 h1:BKClej8VpDg7643pxGrN2Nzn3GBhgRvtx1ufuZOpN4M=
+github.com/cloudfoundry/npm-cnb v0.1.12/go.mod h1:L83lkSNtj20SVvlwPbNPwKTVcN/lhyn6DsAbOb7dtEo=
 github.com/cloudfoundry/occam v0.0.0-20200218193031-7e2052ce2f0f/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
 github.com/cloudfoundry/occam v0.0.0-20200227222407-1c4318bd26e2/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
 github.com/cloudfoundry/occam v0.0.0-20200323143411-1484bd3b2566/go.mod h1:stUR8Lj7wzXGPU7zjYqGdfk/Rtlgq44hD3Vf6lCswms=
