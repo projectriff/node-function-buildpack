@@ -168,6 +168,8 @@ github.com/cloudfoundry/yarn-install-cnb v0.1.19 h1:8H69pfFcPKLxOb71cnKN9+yTeBKm
 github.com/cloudfoundry/yarn-install-cnb v0.1.19/go.mod h1:8OO9O82jJaO4h2BC6LYWpmWRIZV7UMut2qqztLj4088=
 github.com/cloudfoundry/yarn-install-cnb v0.1.20 h1:tLs805FN3UE4YyDUjQNIbFiuZxY7ovvPQ8IOnG5NLRQ=
 github.com/cloudfoundry/yarn-install-cnb v0.1.20/go.mod h1:xiicrj5JweoQWjAyw0UPVTa5fKAoZibDU3i9zaaEuTM=
+github.com/cloudfoundry/yarn-install-cnb v0.1.22 h1:MFSgOhfQ1dJPKwqwzTxM7BJ4FW9cdHG1iZqwPRiiVvs=
+github.com/cloudfoundry/yarn-install-cnb v0.1.22/go.mod h1:QITJytiqSJhlwM7mfELqy5UJd5zFUvWHyQQpM9MJTXs=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
 github.com/cockroachdb/datadriven v0.0.0-20190809214429-80d97fb3cbaa/go.mod h1:zn76sxSg3SzpJ0PPJaLDCu+Bu0Lg3sKTORVIj19EIF8=
 github.com/containerd/cgroups v0.0.0-20190919134610-bf292b21730f/go.mod h1:OApqhQ4XNSNC13gXIwDjhOQxjWa/NxkwZXJ1EvqT0ko=
