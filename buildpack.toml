@@ -18,6 +18,7 @@ api = "0.2"
 id = "io.projectriff.node"
 name = "Node Function Buildpack"
 version = "0.3.1-BUILD-SNAPSHOT"
+homepage = "https://github.com/projectriff/node-function-buildpack"
 
 [[stacks]]
 id = "io.buildpacks.stacks.bionic"
