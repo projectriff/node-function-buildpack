@@ -22,7 +22,7 @@ In a nutshell, when combined with the other buildpacks present in the [riff buil
 Detection passes if
 
 - a `$APPLICATION_ROOT/riff.toml` exists and
-- the build plan already contains a `npm` key (typically because an NPM based application was detected by the [npm buildpack](https://github.com/cloudfoundry/npm-cnb))
+- the build plan already contains a `npm` key (typically because an NPM based application was detected by the [npm buildpack](https://github.com/paketo-buildpacks/npm))
   1. alternatively, if the file pointed to by the `artifact` value in `riff.toml` exists and has a `.js` extension
 
 If detection passes, the buildpack will add a `riff-invoker-node` key and `fn` metadata extracted from the riff metadata.

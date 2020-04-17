@@ -25,7 +25,7 @@ import (
 	"github.com/cloudfoundry/libcfbuildpack/build"
 	"github.com/cloudfoundry/libcfbuildpack/detect"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
-	"github.com/cloudfoundry/node-engine-cnb/node"
+	"github.com/paketo-buildpacks/node-engine/node"
 	"github.com/projectriff/libfnbuildpack/function"
 )
 
