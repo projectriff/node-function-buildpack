@@ -32,9 +32,9 @@ id = "heroku-18"
 [[metadata.dependencies]]
 id      = "riff-invoker-node"
 name    = "riff Node Invoker"
-version = "0.2.1"
-uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.1/node-function-invoker-0.2.1.tgz"
-sha256  = "28ca35defc2f247e1d129500c70659f17c2305f39d6e484d09eb7acf300a65d1"
+version = "0.2.2+snapshot"
+uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.2-snapshot/snapshots/node-function-invoker-0.2.2-snapshot-5842f894164c1e1817ac60ad2232fcefd57fd939.tgz"
+sha256  = "49e6cfe741f823b64b08ff3e79d4bdd6d15e81d5656d984da7aa8fd5dc9303c8"
 stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3", "heroku-18" ]
 
   [[metadata.dependencies.licenses]]
