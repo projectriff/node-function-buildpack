@@ -29,7 +29,7 @@ import (
 const Dependency = "riff-invoker-node"
 const ModulesDependency = "node_modules"
 
-// Invoker represents the Java invoker contributed by the buildpack.
+// Invoker represents the Node invoker contributed by the buildpack.
 type Invoker struct {
 	layer  layers.DependencyLayer
 	layers layers.Layers
