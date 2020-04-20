@@ -399,6 +399,8 @@ github.com/opencontainers/selinux v1.4.0 h1:cpiX/2wWIju/6My60T6/z9CxNG7c8xTQyEmA
 github.com/opencontainers/selinux v1.4.0/go.mod h1:yTcKuYAh6R95iDpefGLQaPaRwJFwyzAJufJyiTt7s0g=
 github.com/paketo-buildpacks/node-engine v0.0.187 h1:qcBTGnmdjgSEyZymYamdwZdJowWay6mNYF5IYqeC8jQ=
 github.com/paketo-buildpacks/node-engine v0.0.187/go.mod h1:j+YJz8VZgl4dvTmkOATyoIkLxNo2ChPCnypD12mk87c=
+github.com/paketo-buildpacks/node-engine v0.0.188 h1:qchnWbceq7qsthuqlNxAO83SEYY9gh5RDzMJrx3GdGY=
+github.com/paketo-buildpacks/node-engine v0.0.188/go.mod h1:j+YJz8VZgl4dvTmkOATyoIkLxNo2ChPCnypD12mk87c=
 github.com/paketo-buildpacks/npm v0.1.19 h1:usfRNqEKyHbDt9VGWQANFquM/JTBQq9O/89G7pJC92A=
 github.com/paketo-buildpacks/npm v0.1.19/go.mod h1:HrZljUfsDj/iMAhsj6TAtc220cqt6yOVpsE2qsBEp0g=
 github.com/paketo-buildpacks/yarn-install v0.1.28 h1:SwIBOGoerRVrwongkbA9kx5Gnc4thU5tPZqxE1CNP2w=
