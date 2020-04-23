@@ -406,6 +406,8 @@ github.com/paketo-buildpacks/npm v0.1.20 h1:RutUzsF0BIo8aYaYgRh8CKlqXwJBBzEae+rx
 github.com/paketo-buildpacks/npm v0.1.20/go.mod h1:dBKRoOuMktj7R77d1wOSTQIcasTKfkGycQRvRn3IH3c=
 github.com/paketo-buildpacks/yarn-install v0.1.30 h1:oKyK0PTvlx8rHx3zXlvKcaKN6zM7SGVPpo60mSgS8Ak=
 github.com/paketo-buildpacks/yarn-install v0.1.30/go.mod h1:pObNWlA6Y/fvduplUz3Ph5fn1mkOcCZK6pnYJ4ZrCEk=
+github.com/paketo-buildpacks/yarn-install v0.1.31 h1:p4+rn4sFXK/tEbrRqPCipm8h1rpme7cWXfS2ew7wYSE=
+github.com/paketo-buildpacks/yarn-install v0.1.31/go.mod h1:qc1E0Alh9fWH9N0j4ldZxKQNXecXmR/1V93757Yu31A=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
 github.com/peterbourgon/diskv v2.0.1+incompatible/go.mod h1:uqqh8zWWbv1HBMNONnaR/tNboyR3/BZd58JJSHlUSCU=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

@@ -9,7 +9,7 @@ require (
 	github.com/onsi/gomega v1.9.0
 	github.com/paketo-buildpacks/node-engine v0.0.190
 	github.com/paketo-buildpacks/npm v0.1.20
-	github.com/paketo-buildpacks/yarn-install v0.1.30
+	github.com/paketo-buildpacks/yarn-install v0.1.31
 	github.com/projectriff/libfnbuildpack v0.4.1
 	github.com/sclevine/spec v1.4.0
 )
