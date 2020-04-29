@@ -114,6 +114,7 @@ github.com/cloudfoundry/packit v0.0.3 h1:ABdSvNQ8g63bjiy3rFeoEkI/VYWftYySDYF6R1k
 github.com/cloudfoundry/packit v0.0.3/go.mod h1:9xu1MT6SrenSB4oFOXtruMapQ+vdfGXLzBZDnPjhYrM=
 github.com/cloudfoundry/packit v0.0.4 h1:MbdOjqZNtuCvURVxEkpyz36Jrdg6JRvE0O3auK+uX64=
 github.com/cloudfoundry/packit v0.0.4/go.mod h1:9xu1MT6SrenSB4oFOXtruMapQ+vdfGXLzBZDnPjhYrM=
+github.com/cloudfoundry/packit v0.0.5/go.mod h1:9xu1MT6SrenSB4oFOXtruMapQ+vdfGXLzBZDnPjhYrM=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
 github.com/cockroachdb/datadriven v0.0.0-20190809214429-80d97fb3cbaa/go.mod h1:zn76sxSg3SzpJ0PPJaLDCu+Bu0Lg3sKTORVIj19EIF8=
 github.com/containerd/cgroups v0.0.0-20190919134610-bf292b21730f/go.mod h1:OApqhQ4XNSNC13gXIwDjhOQxjWa/NxkwZXJ1EvqT0ko=
@@ -402,6 +403,8 @@ github.com/opencontainers/selinux v1.4.0 h1:cpiX/2wWIju/6My60T6/z9CxNG7c8xTQyEmA
 github.com/opencontainers/selinux v1.4.0/go.mod h1:yTcKuYAh6R95iDpefGLQaPaRwJFwyzAJufJyiTt7s0g=
 github.com/paketo-buildpacks/node-engine v0.0.190 h1:yhqYoYjlZJsrue0lTWfeNXoURkDPjUW6VlY1DNfytBE=
 github.com/paketo-buildpacks/node-engine v0.0.190/go.mod h1:rFaUK2oZYfY0eDsVz2dmd/IveQlBZYXb0qZD6iPS7wQ=
+github.com/paketo-buildpacks/node-engine v0.0.192 h1:N9sliMP6RcxwpojXuGQZ3KxkfriZqV6QS2FG3PGvT6U=
+github.com/paketo-buildpacks/node-engine v0.0.192/go.mod h1:6EjqB1e7doBLekI/3xC2zguK1+J4exUDAi3DCXUijgw=
 github.com/paketo-buildpacks/npm v0.1.20 h1:RutUzsF0BIo8aYaYgRh8CKlqXwJBBzEae+rxsObgXmc=
 github.com/paketo-buildpacks/npm v0.1.20/go.mod h1:dBKRoOuMktj7R77d1wOSTQIcasTKfkGycQRvRn3IH3c=
 github.com/paketo-buildpacks/yarn-install v0.1.30 h1:oKyK0PTvlx8rHx3zXlvKcaKN6zM7SGVPpo60mSgS8Ak=
