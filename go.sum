@@ -405,6 +405,8 @@ github.com/paketo-buildpacks/node-engine v0.0.190 h1:yhqYoYjlZJsrue0lTWfeNXoURkD
 github.com/paketo-buildpacks/node-engine v0.0.190/go.mod h1:rFaUK2oZYfY0eDsVz2dmd/IveQlBZYXb0qZD6iPS7wQ=
 github.com/paketo-buildpacks/node-engine v0.0.192 h1:N9sliMP6RcxwpojXuGQZ3KxkfriZqV6QS2FG3PGvT6U=
 github.com/paketo-buildpacks/node-engine v0.0.192/go.mod h1:6EjqB1e7doBLekI/3xC2zguK1+J4exUDAi3DCXUijgw=
+github.com/paketo-buildpacks/node-engine v0.0.193 h1:o+PV1RNDXFHpoaL5q89M8kdBWE7mSEbclA2LpbMdwqc=
+github.com/paketo-buildpacks/node-engine v0.0.193/go.mod h1:6EjqB1e7doBLekI/3xC2zguK1+J4exUDAi3DCXUijgw=
 github.com/paketo-buildpacks/npm v0.1.20 h1:RutUzsF0BIo8aYaYgRh8CKlqXwJBBzEae+rxsObgXmc=
 github.com/paketo-buildpacks/npm v0.1.20/go.mod h1:dBKRoOuMktj7R77d1wOSTQIcasTKfkGycQRvRn3IH3c=
 github.com/paketo-buildpacks/yarn-install v0.1.30 h1:oKyK0PTvlx8rHx3zXlvKcaKN6zM7SGVPpo60mSgS8Ak=
