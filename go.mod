@@ -7,7 +7,7 @@ require (
 	github.com/buildpacks/pack v0.10.0
 	github.com/cloudfoundry/libcfbuildpack v1.91.23
 	github.com/onsi/gomega v1.10.0
-	github.com/paketo-buildpacks/node-engine v0.0.197
+	github.com/paketo-buildpacks/node-engine v0.0.198
 	github.com/paketo-buildpacks/npm v0.1.22
 	github.com/paketo-buildpacks/yarn-install v0.1.33
 	github.com/projectriff/libfnbuildpack v0.4.1
