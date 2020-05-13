@@ -117,6 +117,7 @@ github.com/cloudfoundry/packit v0.0.4/go.mod h1:9xu1MT6SrenSB4oFOXtruMapQ+vdfGXL
 github.com/cloudfoundry/packit v0.0.5 h1:k1zwXcVRMmkiO15G6KJ8DHw9gnKXNdVIfEpJZDP662M=
 github.com/cloudfoundry/packit v0.0.5/go.mod h1:9xu1MT6SrenSB4oFOXtruMapQ+vdfGXLzBZDnPjhYrM=
 github.com/cloudfoundry/packit v0.0.6/go.mod h1:9xu1MT6SrenSB4oFOXtruMapQ+vdfGXLzBZDnPjhYrM=
+github.com/cloudfoundry/packit v0.0.7 h1:10j4d31TrJVCahe04A3bQ7QJUO3rpBLvQ+NGFXzg7os=
 github.com/cloudfoundry/packit v0.0.7/go.mod h1:KCQ69DsYeruJQfZy2pxNR9ozg1OFKEYCFvUHl37t1+Q=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
 github.com/cockroachdb/datadriven v0.0.0-20190809214429-80d97fb3cbaa/go.mod h1:zn76sxSg3SzpJ0PPJaLDCu+Bu0Lg3sKTORVIj19EIF8=

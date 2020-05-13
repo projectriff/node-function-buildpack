@@ -32,14 +32,14 @@ id = "heroku-18"
 [[metadata.dependencies]]
 id      = "riff-invoker-node"
 name    = "riff Node Invoker"
-version = "0.2.2+snapshot"
-uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.2.2-snapshot/snapshots/node-function-invoker-0.2.2-snapshot-5842f894164c1e1817ac60ad2232fcefd57fd939.tgz"
-sha256  = "49e6cfe741f823b64b08ff3e79d4bdd6d15e81d5656d984da7aa8fd5dc9303c8"
+version = "0.3.0"
+uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.3.0/node-function-invoker-0.3.0.tgz"
+sha256  = "83d4f64137aed4199c97031856ddcddf46cb2e173d805b46240d54d036d83241"
 stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3", "heroku-18" ]
 
   [[metadata.dependencies.licenses]]
   type = "Apache-2.0"
-  uri  = "https://github.com/projectriff/node-function-invoker/blob/v0.2.1/LICENSE"
+  uri  = "https://github.com/projectriff/node-function-invoker/blob/v0.3.0/LICENSE"
 
 [[metadata.dependencies]]
 id      = "streaming-http-adapter"
@@ -51,7 +51,7 @@ stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3",
 
   [[metadata.dependencies.licenses]]
   type = "Apache-2.0"
-  uri  = "https://github.com/projectriff/streaming-http-adapter/blob/v0.5.1/LICENSE"
+  uri  = "https://github.com/projectriff/streaming-http-adapter/blob/v0.5.3/LICENSE"
 
 [metadata]
   pre_package = "ci/build.sh"
