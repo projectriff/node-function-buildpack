@@ -15,14 +15,14 @@ if [[ ${version} = *"-SNAPSHOT" ]] ; then
 fi
 
 echo "Publishing buildpack"
-gsutil cp -a public-read artifactory/io/projectriff/node/io.projectriff.node/${version}/io.projectriff.node-${slug}.tgz gs://projectriff/node-function-buildpack/
+gsutil cp artifactory/io/projectriff/node/io.projectriff.node/${version}/io.projectriff.node-${slug}.tgz gs://projectriff/node-function-buildpack/
 if [ "${git_branch}" = master ] ; then
-    gsutil cp -a public-read artifactory/io/projectriff/node/io.projectriff.node/${version}/io.projectriff.node-${slug}.tgz gs://projectriff/node-function-buildpack/latest.tgz
+    gsutil cp artifactory/io/projectriff/node/io.projectriff.node/${version}/io.projectriff.node-${slug}.tgz gs://projectriff/node-function-buildpack/latest.tgz
 fi
 
 echo "Publishing version references"
-gsutil -h 'Content-Type: text/plain' -h 'Cache-Control: private' cp -a public-read <(echo "${slug}") gs://projectriff/node-function-buildpack/versions/snapshots/${git_branch}
-gsutil -h 'Content-Type: text/plain' -h 'Cache-Control: private' cp -a public-read <(echo "${slug}") gs://projectriff/node-function-buildpack/versions/snapshots/${version}
+gsutil -h 'Content-Type: text/plain' -h 'Cache-Control: private' cp <(echo "${slug}") gs://projectriff/node-function-buildpack/versions/snapshots/${git_branch}
+gsutil -h 'Content-Type: text/plain' -h 'Cache-Control: private' cp <(echo "${slug}") gs://projectriff/node-function-buildpack/versions/snapshots/${version}
 if [[ ${version} != *"-SNAPSHOT" ]] ; then
-  gsutil -h 'Content-Type: text/plain' -h 'Cache-Control: private' cp -a public-read <(echo "${version}") gs://projectriff/node-function-buildpack/versions/releases/${git_branch}
+  gsutil -h 'Content-Type: text/plain' -h 'Cache-Control: private' cp <(echo "${version}") gs://projectriff/node-function-buildpack/versions/releases/${git_branch}
 fi
