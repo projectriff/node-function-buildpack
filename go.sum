@@ -423,6 +423,8 @@ github.com/paketo-buildpacks/node-engine v0.0.200 h1:ofL8z8W/HI2t75rRz+l3C/rODpE
 github.com/paketo-buildpacks/node-engine v0.0.200/go.mod h1:JmIkYFN5cUg7Qhe/ZEZm733e4pwJQ5UTBsZRxcRLYXk=
 github.com/paketo-buildpacks/node-engine v0.0.201 h1:bFJT+3WiExzh4VNeNQx3XovnW0mYx2AFU6khAzIrSb8=
 github.com/paketo-buildpacks/node-engine v0.0.201/go.mod h1:JmIkYFN5cUg7Qhe/ZEZm733e4pwJQ5UTBsZRxcRLYXk=
+github.com/paketo-buildpacks/node-engine v0.0.203 h1:QH5mYV6m0t/buomwijVIVIo+wmcxXnDU1h2lrleyMVc=
+github.com/paketo-buildpacks/node-engine v0.0.203/go.mod h1:icyO6xDB++ZwyUszxOZ7FA1GkvyRlU23KTvu553WkUU=
 github.com/paketo-buildpacks/npm v0.1.21 h1:OxEzqnE8Imbn5LTWvGv2WskhOH/EWldvXPCht5O7bbw=
 github.com/paketo-buildpacks/npm v0.1.21/go.mod h1:Y0dPtpo+GHWogCAFS4ZbTPm32zn8UUuv8zHxZJ6NVCc=
 github.com/paketo-buildpacks/npm v0.1.22 h1:OszplL9sm+5S2DrQzBhTqM9TD4MEkGtkY8+krhUpFg0=
@@ -849,6 +851,7 @@ gopkg.in/yaml.v2 v2.2.4/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
 gopkg.in/yaml.v2 v2.2.7/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
 gopkg.in/yaml.v2 v2.2.8 h1:obN1ZagJSUGI0Ek/LBmuj4SNLPfIny3KsKFopxRdj10=
 gopkg.in/yaml.v2 v2.2.8/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
+gopkg.in/yaml.v2 v2.3.0/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
 gotest.tools v2.1.0+incompatible/go.mod h1:DsYFclhRJ6vuDpmuTbkuFWG+y2sxOXAzmJt81HFBacw=
 gotest.tools v2.2.0+incompatible h1:VsBPFP1AI068pPrMxtb/S8Zkgf9xEmTLJjfM+P5UIEo=
 gotest.tools v2.2.0+incompatible/go.mod h1:DsYFclhRJ6vuDpmuTbkuFWG+y2sxOXAzmJt81HFBacw=
