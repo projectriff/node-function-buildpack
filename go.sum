@@ -435,7 +435,10 @@ github.com/paketo-buildpacks/npm v0.1.26 h1:OniM6gpdIiV6asMKYK8zIJ8qWNEm7nQ2FjOw
 github.com/paketo-buildpacks/npm v0.1.26/go.mod h1:8j3w0toPQMCNT2SOMgw27iZA5VK3WgkgZSX9xeeG9Gc=
 github.com/paketo-buildpacks/npm v0.1.27 h1:A+DW8MEJfLW51Pkal9MO+oB5a1qlCr2/glxqiVWX/Qc=
 github.com/paketo-buildpacks/npm v0.1.27/go.mod h1:FmTPd0PdaFobGc+zBj3H+3TT/IHvfqNk9aVsazFYHVg=
+github.com/paketo-buildpacks/npm v0.1.28 h1:qQDdNjzYWQxwHxdiyQ8CjHOMCvKjGyxPoV1QbtiByek=
+github.com/paketo-buildpacks/npm v0.1.28/go.mod h1:9zABmARla9yquiQRYQG6KfMcKwddJ+63JOTvkQfmt4A=
 github.com/paketo-buildpacks/occam v0.0.4/go.mod h1:GNW2KzdEjWkcAJZj/aI+PSfXxGHkA8XxEkaUaCP5ttY=
+github.com/paketo-buildpacks/packit v0.0.8/go.mod h1:S2ud8PcMgCjnOjIYnlituwDFL12uQ9eWy9qjTHlM/IM=
 github.com/paketo-buildpacks/yarn-install v0.1.32 h1:uS0bVJbNgH9fM/sQTrHJdHA+XrVxmiB/UgcyT6vU5C0=
 github.com/paketo-buildpacks/yarn-install v0.1.32/go.mod h1:Xhfzjbrizd7W7hnQSMKEAyUJMFI/Wu9t2Pep07kPfjw=
 github.com/paketo-buildpacks/yarn-install v0.1.33 h1:Ia3K+Ryas2dAOsJkVxutURNS7ESkAW7c3cWr650KUNY=
