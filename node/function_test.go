@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2019 the original author or authors.
+ * Copyright 2018-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,65 +17,51 @@
 package node_test
 
 import (
+	"io/ioutil"
+	"os"
 	"path/filepath"
 	"testing"
 
-	"github.com/cloudfoundry/libcfbuildpack/buildpackplan"
-	"github.com/cloudfoundry/libcfbuildpack/test"
-	"github.com/onsi/gomega"
+	"github.com/buildpacks/libcnb"
+	. "github.com/onsi/gomega"
 	"github.com/projectriff/node-function-buildpack/node"
 	"github.com/sclevine/spec"
-	"github.com/sclevine/spec/report"
 )
 
-func TestFunction(t *testing.T) {
-	spec.Run(t, "Function", func(t *testing.T, _ spec.G, it spec.S) {
+func testFunction(t *testing.T, context spec.G, it spec.S) {
+	var (
+		Expect = NewWithT(t).Expect
 
-		g := gomega.NewWithT(t)
+		ctx libcnb.BuildContext
+	)
 
-		var f *test.BuildFactory
+	it.Before(func() {
+		var err error
 
-		it.Before(func() {
-			f = test.NewBuildFactory(t)
-		})
+		ctx.Application.Path, err = ioutil.TempDir("", "function-application")
+		Expect(err).NotTo(HaveOccurred())
 
-		it("returns true if build plan exists", func() {
-			f.AddPlan(buildpackplan.Plan{
-				Name: node.Dependency,
-				Metadata: map[string]interface{}{
-					node.FunctionArtifact: "test-function",
-				},
-			})
+		ctx.Layers.Path, err = ioutil.TempDir("", "function-layers")
+		Expect(err).NotTo(HaveOccurred())
+	})
 
-			_, ok, err := node.NewFunction(f.Build)
-			g.Expect(err).NotTo(gomega.HaveOccurred())
+	it.After(func() {
+		Expect(os.RemoveAll(ctx.Application.Path)).To(Succeed())
+		Expect(os.RemoveAll(ctx.Layers.Path)).To(Succeed())
+	})
 
-			g.Expect(ok).To(gomega.BeTrue())
-		})
+	it("contributes function", func() {
+		f, err := node.NewFunction(ctx.Application.Path, "test-artifact.js")
+		Expect(err).NotTo(HaveOccurred())
 
-		it("returns false if build plan does not exist", func() {
-			_, ok, err := node.NewFunction(f.Build)
-			g.Expect(err).NotTo(gomega.HaveOccurred())
+		layer, err := ctx.Layers.Layer("test-layer")
+		Expect(err).NotTo(HaveOccurred())
 
-			g.Expect(ok).To(gomega.BeFalse())
-		})
+		layer, err = f.Contribute(layer)
+		Expect(err).NotTo(HaveOccurred())
 
-		it("contributes function to launch", func() {
-			f.AddPlan(buildpackplan.Plan{
-				Name: node.Dependency,
-				Metadata: map[string]interface{}{
-					node.FunctionArtifact: "test-function",
-				},
-			})
+		Expect(layer.Launch).To(BeTrue())
+		Expect(layer.LaunchEnvironment["FUNCTION_URI.override"]).To(Equal(filepath.Join(ctx.Application.Path, "test-artifact.js")))
+	})
 
-			h, _, err := node.NewFunction(f.Build)
-			g.Expect(err).NotTo(gomega.HaveOccurred())
-
-			g.Expect(h.Contribute()).To(gomega.Succeed())
-
-			layer := f.Build.Layers.Layer("node-function")
-			g.Expect(layer).To(test.HaveLayerMetadata(false, false, true))
-			g.Expect(layer).To(test.HaveOverrideLaunchEnvironment("FUNCTION_URI", filepath.Join(f.Build.Application.Root, "test-function")))
-		})
-	}, spec.Report(report.Terminal{}))
 }

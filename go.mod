@@ -1,15 +1,12 @@
 module github.com/projectriff/node-function-buildpack
 
-go 1.13
+go 1.14
 
 require (
-	github.com/buildpack/libbuildpack v1.25.11
-	github.com/buildpacks/pack v0.10.0
-	github.com/cloudfoundry/libcfbuildpack v1.91.23
+	github.com/buildpacks/libcnb v1.12.0
 	github.com/onsi/gomega v1.10.0
-	github.com/paketo-buildpacks/node-engine v0.0.203
-	github.com/paketo-buildpacks/npm v0.1.28
-	github.com/paketo-buildpacks/yarn-install v0.1.37
-	github.com/projectriff/libfnbuildpack v0.4.1
+	github.com/paketo-buildpacks/libpak v1.33.2
+	github.com/projectriff/libfnbuildpack v0.5.0
 	github.com/sclevine/spec v1.4.0
+	github.com/stretchr/testify v1.5.1
 )

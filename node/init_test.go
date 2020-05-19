@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 the original author or authors.
+ * Copyright 2018-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package main
+package node_test
 
 import (
-	"github.com/projectriff/libfnbuildpack/function"
-	"github.com/projectriff/node-function-buildpack/node"
+	"testing"
+
+	"github.com/sclevine/spec"
+	"github.com/sclevine/spec/report"
 )
 
-func main() {
-	function.Buildpack{BuildpackImplementation: node.Buildpack{}}.Detect()
+func TestUnit(t *testing.T) {
+	suite := spec.New("node", spec.Report(report.Terminal{}))
+	suite("Build", testBuild)
+	suite("Detect", testDetect)
+	suite("Function", testFunction)
+	suite("Invoker", testInvoker)
+	suite.Run(t)
 }

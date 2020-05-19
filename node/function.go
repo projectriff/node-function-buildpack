@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2019 the original author or authors.
+ * Copyright 2018-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,65 +17,38 @@
 package node
 
 import (
-	"fmt"
 	"path/filepath"
 
-	"github.com/buildpack/libbuildpack/application"
-	"github.com/cloudfoundry/libcfbuildpack/build"
-	"github.com/cloudfoundry/libcfbuildpack/layers"
+	"github.com/buildpacks/libcnb"
+	"github.com/paketo-buildpacks/libpak"
+	"github.com/paketo-buildpacks/libpak/bard"
 )
 
-// functionArtifact is a key identifying the path to the function entrypoint in the build plan.
-const FunctionArtifact = "fn"
-
-// Function represents the function to be executed.
 type Function struct {
-	application application.Application
-	functionJS  string
-	layer       layers.Layer
+	LayerContributor libpak.LayerContributor
+	Logger           bard.Logger
+	Path             string
 }
 
-// Contributes makes the contribution to the launch layer.
-func (f Function) Contribute() error {
-	path := filepath.Join(f.application.Root, f.functionJS)
-
-	return f.layer.Contribute(marker{"NodeJS", path}, func(layer layers.Layer) error {
-		return layer.OverrideLaunchEnv("FUNCTION_URI", path)
-	}, layers.Launch)
-}
-
-// NewFunction creates a new instance returning true if the riff-invoker-node plan exists.
-func NewFunction(build build.Build) (Function, bool, error) {
-	p, ok, err := build.Plans.GetShallowMerged(Dependency)
-	if err != nil {
-		return Function{}, false, err
-	}
-	if !ok {
-		return Function{}, false, nil
-	}
-
-	fa, ok := p.Metadata[FunctionArtifact]
-	if !ok {
-		fa = ""
-	}
-
-	exec, ok := fa.(string)
-	if !ok {
-		return Function{}, false, fmt.Errorf("node metadata of incorrect type: %v", p.Metadata[FunctionArtifact])
-	}
-
+func NewFunction(applicationPath string, artifactPath string) (Function, error) {
 	return Function{
-		build.Application,
-		exec,
-		build.Layers.Layer("node-function"),
-	}, true, nil
+		LayerContributor: libpak.NewLayerContributor(bard.FormatIdentity("NodeJS", artifactPath),
+			map[string]interface{}{"artifact": artifactPath}),
+		Path: filepath.Join(applicationPath, artifactPath),
+	}, nil
 }
 
-type marker struct {
-	Type     string `toml:"type"`
-	Function string `toml:"function"`
+func (f Function) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
+	f.LayerContributor.Logger = f.Logger
+
+	return f.LayerContributor.Contribute(layer, func() (libcnb.Layer, error) {
+		layer.LaunchEnvironment.Override("FUNCTION_URI", f.Path)
+
+		layer.Launch = true
+		return layer, nil
+	})
 }
 
-func (m marker) Identity() (string, string) {
-	return m.Type, m.Function
+func (Function) Name() string {
+	return "function"
 }
