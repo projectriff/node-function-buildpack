@@ -57,7 +57,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 					},
 					Requires: []libcnb.BuildPlanRequire{
 						{Name: "node"},
-						{Name: "npm", Metadata: map[string]interface{}{"build": true, "launch": true}},
+						{Name: "node_modules", Metadata: map[string]interface{}{"build": true, "launch": true}},
 						{Name: "streaming-http-adapter"},
 					},
 				},
@@ -79,7 +79,7 @@ artifact = "test-artifact"
 					},
 					Requires: []libcnb.BuildPlanRequire{
 						{Name: "node"},
-						{Name: "npm", Metadata: map[string]interface{}{"build": true, "launch": true}},
+						{Name: "node_modules", Metadata: map[string]interface{}{"build": true, "launch": true}},
 						{Name: "streaming-http-adapter"},
 						{Name: "riff-node", Metadata: map[string]interface{}{"artifact": "test-artifact"}},
 					},

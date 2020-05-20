@@ -36,7 +36,7 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 				},
 				Requires: []libcnb.BuildPlanRequire{
 					{Name: "node"},
-					{Name: "npm", Metadata: map[string]interface{}{"build": true, "launch": true}},
+					{Name: "node_modules", Metadata: map[string]interface{}{"build": true, "launch": true}},
 					{Name: "streaming-http-adapter"},
 				},
 			},
