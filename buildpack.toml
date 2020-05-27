@@ -32,10 +32,12 @@ id = "org.cloudfoundry.stacks.cflinuxfs3"
 [[metadata.configurations]]
 name        = "RIFF"
 description = "whether this is a riff function without a riff.toml file"
+build       = true
 
 [[metadata.configurations]]
 name        = "RIFF_ARTIFACT"
 description = "the artifact to invoke"
+build       = true
 
 [[metadata.dependencies]]
 id      = "invoker"

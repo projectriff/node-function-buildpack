@@ -56,8 +56,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 						{Name: "riff-node"},
 					},
 					Requires: []libcnb.BuildPlanRequire{
-						{Name: "node"},
-						{Name: "node_modules", Metadata: map[string]interface{}{"build": true, "launch": true}},
+						{Name: "node", Metadata: map[string]interface{}{"build": true}},
 						{Name: "streaming-http-adapter"},
 					},
 				},
@@ -65,7 +64,7 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 		}))
 	})
 
-	it("passes with with riff.toml", func() {
+	it("passes with riff.toml and non-.js artifact", func() {
 		Expect(ioutil.WriteFile(filepath.Join(ctx.Application.Path, "riff.toml"), []byte(`
 artifact = "test-artifact"
 `), 0644))
@@ -78,10 +77,51 @@ artifact = "test-artifact"
 						{Name: "riff-node"},
 					},
 					Requires: []libcnb.BuildPlanRequire{
-						{Name: "node"},
-						{Name: "node_modules", Metadata: map[string]interface{}{"build": true, "launch": true}},
+						{Name: "node", Metadata: map[string]interface{}{"build": true}},
 						{Name: "streaming-http-adapter"},
-						{Name: "riff-node", Metadata: map[string]interface{}{"artifact": "test-artifact"}},
+					},
+				},
+			},
+		}))
+	})
+
+	it("passes with with riff.toml and .js artifact", func() {
+		Expect(ioutil.WriteFile(filepath.Join(ctx.Application.Path, "riff.toml"), []byte(`
+artifact = "test-artifact.js"
+`), 0644))
+
+		Expect(detect.Detect(ctx)).To(Equal(libcnb.DetectResult{
+			Pass: true,
+			Plans: []libcnb.BuildPlan{
+				{
+					Provides: []libcnb.BuildPlanProvide{
+						{Name: "riff-node"},
+					},
+					Requires: []libcnb.BuildPlanRequire{
+						{Name: "node", Metadata: map[string]interface{}{"build": true}},
+						{Name: "streaming-http-adapter"},
+						{Name: "riff-node", Metadata: map[string]interface{}{"artifact": "test-artifact.js"}},
+					},
+				},
+			},
+		}))
+	})
+
+	it("passes with with riff.toml and package.json", func() {
+		Expect(ioutil.WriteFile(filepath.Join(ctx.Application.Path, "riff.toml"), []byte{}, 0644))
+		Expect(ioutil.WriteFile(filepath.Join(ctx.Application.Path, "package.json"), []byte{}, 0644))
+
+		Expect(detect.Detect(ctx)).To(Equal(libcnb.DetectResult{
+			Pass: true,
+			Plans: []libcnb.BuildPlan{
+				{
+					Provides: []libcnb.BuildPlanProvide{
+						{Name: "riff-node"},
+					},
+					Requires: []libcnb.BuildPlanRequire{
+						{Name: "node", Metadata: map[string]interface{}{"build": true}},
+						{Name: "streaming-http-adapter"},
+						{Name: "riff-node", Metadata: map[string]interface{}{}},
 					},
 				},
 			},

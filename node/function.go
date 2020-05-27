@@ -22,6 +22,7 @@ import (
 	"github.com/buildpacks/libcnb"
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/bard"
+	"github.com/projectriff/libfnbuildpack"
 )
 
 type Function struct {
@@ -32,7 +33,7 @@ type Function struct {
 
 func NewFunction(applicationPath string, artifactPath string) (Function, error) {
 	return Function{
-		LayerContributor: libpak.NewLayerContributor(bard.FormatIdentity("NodeJS", artifactPath),
+		LayerContributor: libpak.NewLayerContributor(libfnbuildpack.FormatFunction("NodeJS", artifactPath),
 			map[string]interface{}{"artifact": artifactPath}),
 		Path: filepath.Join(applicationPath, artifactPath),
 	}, nil

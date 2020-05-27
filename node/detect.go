@@ -18,6 +18,8 @@ package node
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
 
 	"github.com/buildpacks/libcnb"
 	"github.com/paketo-buildpacks/libpak"
@@ -35,8 +37,7 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 					{Name: "riff-node"},
 				},
 				Requires: []libcnb.BuildPlanRequire{
-					{Name: "node"},
-					{Name: "node_modules", Metadata: map[string]interface{}{"build": true, "launch": true}},
+					{Name: "node", Metadata: map[string]interface{}{"build": true}},
 					{Name: "streaming-http-adapter"},
 				},
 			},
@@ -50,12 +51,25 @@ func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) 
 
 	if ok, err := libfnbuildpack.IsRiff(context.Application.Path, cr); err != nil {
 		return libcnb.DetectResult{}, fmt.Errorf("unable to determine if application is riff\n%w", err)
-	} else if ok {
-		metadata, err := libfnbuildpack.Metadata(context.Application.Path, cr)
-		if err != nil {
-			return libcnb.DetectResult{}, fmt.Errorf("uanble to read riff metadata\n%w", err)
-		}
+	} else if !ok {
+		return result, nil
+	}
 
+	metadata, err := libfnbuildpack.Metadata(context.Application.Path, cr)
+	if err != nil {
+		return libcnb.DetectResult{}, fmt.Errorf("unable to read riff metadata\n%w", err)
+	}
+
+	if s, ok := metadata["artifact"].(string); ok && filepath.Ext(s) == ".js" {
+		result.Plans[0].Requires = append(result.Plans[0].Requires, libcnb.BuildPlanRequire{
+			Name:     "riff-node",
+			Metadata: metadata,
+		})
+	}
+
+	if _, err := os.Stat(filepath.Join(context.Application.Path, "package.json")); err != nil && !os.IsNotExist(err) {
+		return libcnb.DetectResult{}, fmt.Errorf("unable to stat package.json\n%w", err)
+	} else if err == nil {
 		result.Plans[0].Requires = append(result.Plans[0].Requires, libcnb.BuildPlanRequire{
 			Name:     "riff-node",
 			Metadata: metadata,
