@@ -77,12 +77,11 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 	f.Logger = b.Logger
 	result.Layers = append(result.Layers, f)
 
-	command := "streaming-http-adapter"
-	arguments := []string{"node", fmt.Sprintf("%s/server.js", filepath.Join(context.Layers.Path, i.Name()))}
+	command := fmt.Sprintf("streaming-http-adapter node %s/server.js", filepath.Join(context.Layers.Path, i.Name()))
 	result.Processes = append(result.Processes,
-		libcnb.Process{Type: "node-function", Command: command, Arguments: arguments},
-		libcnb.Process{Type: "function", Command: command, Arguments: arguments},
-		libcnb.Process{Type: "web", Command: command, Arguments: arguments},
+		libcnb.Process{Type: "node-function", Command: command},
+		libcnb.Process{Type: "function", Command: command},
+		libcnb.Process{Type: "web", Command: command},
 	)
 
 	return result, nil
