@@ -56,7 +56,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		return result, nil
 	}
 
-	dep, err := dr.Resolve("invoker", e.Version)
+	dep, err := dr.Resolve("invoker", "")
 	if err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to find dependency\n%w", err)
 	}
