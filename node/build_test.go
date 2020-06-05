@@ -76,9 +76,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(result.Layers[1].(node.Function).Path).To(Equal(filepath.Join(ctx.Application.Path, "test-artifact")))
 
 		Expect(result.Processes).To(ContainElements(
-			libcnb.Process{Type: "node-function", Command: fmt.Sprintf("streaming-http-adapter node %s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))},
-			libcnb.Process{Type: "function", Command: fmt.Sprintf("streaming-http-adapter node %s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))},
-			libcnb.Process{Type: "web", Command: fmt.Sprintf("streaming-http-adapter node %s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))},
+			libcnb.Process{Type: "node-function", Command: "streaming-http-adapter", Arguments: []string{"node", fmt.Sprintf("%s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))}},
+			libcnb.Process{Type: "function", Command: "streaming-http-adapter", Arguments: []string{"node", fmt.Sprintf("%s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))}},
+			libcnb.Process{Type: "web", Command: "streaming-http-adapter", Arguments: []string{"node", fmt.Sprintf("%s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))}},
 		))
 	})
 
