@@ -49,7 +49,7 @@ stacks  = [ "heroku-18", "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks
 
   [[metadata.dependencies.licenses]]
   type = "Apache-2.0"
-  uri  = "https://github.com/projectriff/node-function-invoker/blob/master/LICENSE"
+  uri  = "https://github.com/projectriff/node-function-invoker/blob/main/LICENSE"
 
 [metadata]
 pre-package   = "scripts/build.sh"
