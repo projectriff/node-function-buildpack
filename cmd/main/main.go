@@ -21,6 +21,7 @@ import (
 
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/bard"
+
 	"github.com/projectriff/node-function-buildpack/node"
 )
 

@@ -27,9 +27,10 @@ import (
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/effect"
 	"github.com/paketo-buildpacks/libpak/effect/mocks"
-	"github.com/projectriff/node-function-buildpack/node"
 	"github.com/sclevine/spec"
 	"github.com/stretchr/testify/mock"
+
+	"github.com/projectriff/node-function-buildpack/node"
 )
 
 func testInvoker(t *testing.T, context spec.G, it spec.S) {
