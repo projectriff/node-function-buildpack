@@ -62,7 +62,7 @@ func testFunction(t *testing.T, context spec.G, it spec.S) {
 		Expect(err).NotTo(HaveOccurred())
 
 		Expect(layer.Launch).To(BeTrue())
-		Expect(layer.LaunchEnvironment["FUNCTION_URI.override"]).To(Equal(filepath.Join(ctx.Application.Path, "test-artifact.js")))
+		Expect(layer.LaunchEnvironment["FUNCTION_URI.default"]).To(Equal(filepath.Join(ctx.Application.Path, "test-artifact.js")))
 	})
 
 }
