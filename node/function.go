@@ -45,9 +45,8 @@ func (f Function) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 	return f.LayerContributor.Contribute(layer, func() (libcnb.Layer, error) {
 		layer.LaunchEnvironment.Default("FUNCTION_URI", f.Path)
 
-		layer.Launch = true
 		return layer, nil
-	})
+	}, libpak.LaunchLayer)
 }
 
 func (Function) Name() string {

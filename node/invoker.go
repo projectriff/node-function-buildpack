@@ -60,10 +60,8 @@ func (i Invoker) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 			return libcnb.Layer{}, fmt.Errorf("unable to run npm ci\n%w", err)
 		}
 
-		layer.Launch = true
 		return layer, nil
-	})
-
+	}, libpak.LaunchLayer)
 }
 
 func (i Invoker) Name() string {
