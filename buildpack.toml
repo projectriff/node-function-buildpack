@@ -42,9 +42,9 @@ build       = true
 [[metadata.dependencies]]
 id      = "invoker"
 name    = "riff NodeJS Invoker"
-version = "0.3.0"
-uri     = "https://storage.googleapis.com/projectriff/node-function-invoker/releases/v0.3.0/node-function-invoker-0.3.0.tgz"
-sha256  = "83d4f64137aed4199c97031856ddcddf46cb2e173d805b46240d54d036d83241"
+version = "0.0.0"
+uri     = "placeholder"
+sha256  = "placeholder"
 stacks  = [ "heroku-18", "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
 
   [[metadata.dependencies.licenses]]
