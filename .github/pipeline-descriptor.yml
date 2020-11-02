@@ -1,5 +1,3 @@
-path: ../../../projectriff/node-function-buildpack
-
 codeowners:
 - path:  "*"
   owner: "@projectriff/riff-dev"
