@@ -1,0 +1,22 @@
+path: ../../../projectriff/node-function-buildpack
+
+codeowners:
+- path:  "*"
+  owner: "@projectriff/riff-dev"
+
+package:
+  repository:     gcr.io/projectriff/node-function
+  register:       true
+  registry_token: ${{ secrets.RIFF_BUILDPACK_REGISTRY_TOKEN }}
+
+docker_credentials:
+- registry: gcr.io
+  username: _json_key
+  password: ${{ secrets.RIFF_GCLOUD_SERVICE_ACCOUNT_KEY }}
+
+dependencies:
+- id:   invoker
+  uses: docker://ghcr.io/paketo-buildpacks/actions/gcs-dependency:main
+  with:
+    bucket: projectriff
+    glob:   node-function-invoker/releases/v([\d\.]+)/node-function-invoker-(?:[\d\.]+).tgz
