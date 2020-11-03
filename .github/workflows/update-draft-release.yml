@@ -12,7 +12,7 @@ jobs:
             - id: release-drafter
               uses: release-drafter/release-drafter@v5
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.RIFF_GITHUB_TOKEN }}
             - uses: actions/checkout@v2
             - name: Install yj
               run: |
@@ -180,7 +180,7 @@ jobs:
                   --field "name=@${HOME}/name" \
                   --field "body=@${HOME}/body"
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.RIFF_GITHUB_TOKEN }}
                 RELEASE_BODY: ${{ steps.release-drafter.outputs.body }}
                 RELEASE_ID: ${{ steps.release-drafter.outputs.id }}
                 RELEASE_NAME: ${{ steps.release-drafter.outputs.name }}

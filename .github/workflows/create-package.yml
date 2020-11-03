@@ -146,7 +146,7 @@ jobs:
                   --field "body=${RELEASE_BODY//<!-- DIGEST PLACEHOLDER -->/\`${DIGEST}\`}"
               env:
                 DIGEST: ${{ steps.package.outputs.digest }}
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.RIFF_GITHUB_TOKEN }}
             - uses: docker://ghcr.io/buildpacks/actions/registry:main
               with:
                 address: gcr.io/projectriff/node-function@${{ steps.package.outputs.digest }}
