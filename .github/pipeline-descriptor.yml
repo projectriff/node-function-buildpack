@@ -7,7 +7,7 @@ codeowners:
 package:
   repository:     gcr.io/projectriff/node-function
   register:       true
-  registry_token: ${{ secrets.RIFF_BUILDPACK_REGISTRY_TOKEN }}
+  registry_token: ${{ secrets.RIFF_GITHUB_TOKEN }}
 
 docker_credentials:
 - registry: gcr.io
