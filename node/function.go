@@ -33,8 +33,13 @@ type Function struct {
 
 func NewFunction(applicationPath string, artifactPath string) (Function, error) {
 	return Function{
-		LayerContributor: libpak.NewLayerContributor(libfnbuildpack.FormatFunction("NodeJS", artifactPath),
-			map[string]interface{}{"artifact": artifactPath}),
+		LayerContributor: libpak.NewLayerContributor(
+			libfnbuildpack.FormatFunction("NodeJS", artifactPath),
+			map[string]interface{}{"artifact": artifactPath},
+			libcnb.LayerTypes{
+				Launch: true,
+			},
+		),
 		Path: filepath.Join(applicationPath, artifactPath),
 	}, nil
 }
@@ -46,7 +51,7 @@ func (f Function) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 		layer.LaunchEnvironment.Default("FUNCTION_URI", f.Path)
 
 		return layer, nil
-	}, libpak.LaunchLayer)
+	})
 }
 
 func (Function) Name() string {

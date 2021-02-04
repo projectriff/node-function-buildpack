@@ -81,6 +81,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			libcnb.Process{Type: "function", Command: "streaming-http-adapter", Arguments: []string{"node", fmt.Sprintf("%s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))}},
 			libcnb.Process{Type: "web", Command: "streaming-http-adapter", Arguments: []string{"node", fmt.Sprintf("%s/server.js", filepath.Join(ctx.Layers.Path, "invoker"))}},
 		))
+
+		Expect(result.BOM.Entries).To(HaveLen(1))
+		Expect(result.BOM.Entries[0].Name).To(Equal("invoker"))
 	})
 
 	it("handles unset handler", func() {
@@ -100,6 +103,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(err).NotTo(HaveOccurred())
 
 		Expect(result.Layers[1].(node.Function).Path).To(Equal(ctx.Application.Path))
+
+		Expect(result.BOM.Entries).To(HaveLen(1))
+		Expect(result.BOM.Entries[0].Name).To(Equal("invoker"))
 	})
 
 }

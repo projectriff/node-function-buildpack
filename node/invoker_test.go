@@ -63,7 +63,7 @@ func testInvoker(t *testing.T, context spec.G, it spec.S) {
 		}
 		dc := libpak.DependencyCache{CachePath: "testdata"}
 
-		i := node.NewInvoker(dep, dc, &libcnb.BuildpackPlan{})
+		i, _ := node.NewInvoker(dep, dc)
 		i.Executor = executor
 
 		layer, err := ctx.Layers.Layer("test-layer")
